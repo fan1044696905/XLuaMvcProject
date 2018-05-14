@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Root>
+  <AssetBundle>
+    <Item Name="UIPrefab" Tag="Prefab" IsFolder="True" IsFirstData="True">
+      <Path Value="Download\UIPerfab"/>
+    </Item>
+
+    <Item Name="UISource" Tag="UI" IsFolder="True" IsFirstData="True">
+      <Path Value="Download\UISource"/>
+    </Item>
+    
+    <Item Name="XLuaCode" Tag="XLuaCode" IsFolder="True" IsFirstData="True">
+      <Path Value="Download\XLuaCode"/>
+    </Item>
+
+  </AssetBundle>
+</Root>
