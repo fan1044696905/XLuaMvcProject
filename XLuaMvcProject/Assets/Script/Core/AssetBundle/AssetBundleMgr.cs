@@ -76,11 +76,12 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
 
 
     /// <summary>
-    /// 加载或者下载资源
+    /// 加载或下载Lua代码
     /// </summary>
-    /// <param name="path">短路径</param>
-    /// <param name="name"></param>
+    /// <param name="path">代码路径</param>
+    /// <param name="onComplete">加载完成回调</param>
     /// <param name="OnCreate"></param>
+    /// <param name="type"></param>
     public void LoadOrDownloadLuaCode(string path, Action<TextAsset> onComplete, XLuaCustomExport.OnCreate OnCreate = null, byte type = 0)
     {   
         string[] strs = path.Split('/');
@@ -88,13 +89,27 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
         LoadOrDownload<TextAsset>(AppConst.XLuaCodeTxtPath+path, str+".lua", onComplete, OnCreate, 0);
     }
 
+    /// <summary>
+    /// 加载或者下载资源
+    /// </summary>
+    /// <param name="path">短路径</param>
+    /// <param name="onComplete">C#回调</param>
+    /// <param name="OnCreate">Lua回调</param>
+    public void LoadOrDownloadScene(string path, Action<TextAsset> onComplete, XLuaCustomExport.OnCreate OnCreate = null, byte type = 0)
+    {
+        string[] strs = path.Split('/');
+        string str = strs[strs.Length - 1].Split('.')[0];
+        LoadOrDownload<TextAsset>(AppConst.XLuaCodeTxtPath + path, str + ".lua", onComplete, OnCreate, 0);
+    }
+
 
     /// <summary>
     /// 加载或者下载资源
     /// </summary>
-    /// <param name="path"></param>
-    /// <param name="name"></param>
-    /// <param name="onComplete"></param>
+    /// <param name="path">短路径</param>
+    /// <param name="name">加载对象名</param>
+    /// <param name="onComplete">C#回调</param>
+    /// <param name="OnCreate">Lua回调</param>
     /// <param name="type">0 = Prefab 1 = PNG</param>
     public void LoadOrDownload<T>(string path, string name, Action<T> onComplete,XLuaCustomExport.OnCreate OnCreate=null, byte type = 0)where T: UnityEngine.Object
     {
@@ -144,16 +159,13 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
 
                 if (!File.Exists(fullPath))
                 {
-
                     //如果文件不存在 需要下载          
                     DownloadDataEntity entity = DownloadMgr.Instance.GetServerData(path);
-
                     if (entity != null)
                     {
                         AssetBundleDownload.Instance.StartCoroutine(AssetBundleDownload.Instance.DownloadData(entity,
                             (bool isSuccess) =>
                             {
-
                                 if (isSuccess) //如果下载成功
                                 {
                                     if (m_AssetDic.ContainsKey(fullPath))
@@ -189,7 +201,7 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
                                             //进行回调
                                             onComplete(obj as T);
                                         }
-                                 
+
                                         //todu 进行xlua的回调
                                         if (OnCreate != null)
                                         {
@@ -202,12 +214,17 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
                             }
                         ));
                     }
+                    else
+                    {
+                        Debuger.LogError("The path is error:"+path);
+                    }
                 }
                 else
                 {
-
+                    Debug.Log("fullPath1 = " + fullPath);
                     if (m_AssetDic.ContainsKey(fullPath))
                     {
+                        Debug.Log("fullPath = "+fullPath);
                         if (onComplete != null)
                         {
                             onComplete(m_AssetDic[fullPath] as T);

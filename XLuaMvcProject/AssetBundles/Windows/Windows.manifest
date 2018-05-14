@@ -1,0 +1,109 @@
+ManifestFileVersion: 0
+CRC: 1567175564
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: download/uisource/background/init.assetbundle
+      Dependencies: {}
+    Info_1:
+      Name: download/uisource/background/loading_bg.assetbundle
+      Dependencies: {}
+    Info_2:
+      Name: download/uisource/background/colse.assetbundle
+      Dependencies: {}
+    Info_3:
+      Name: download/uisource/background/bg_004.assetbundle
+      Dependencies: {}
+    Info_4:
+      Name: download/uisource/background/bg.assetbundle
+      Dependencies: {}
+    Info_5:
+      Name: download/uisource/background/grid.assetbundle
+      Dependencies: {}
+    Info_6:
+      Name: download/uisource/background/logon_bg.assetbundle
+      Dependencies: {}
+    Info_7:
+      Name: download/uisource/background/button.assetbundle
+      Dependencies: {}
+    Info_8:
+      Name: download/uiperfab/uiwindows/taskitemview.assetbundle
+      Dependencies:
+        Dependency_0: download/uisource/background/grid.assetbundle
+    Info_9:
+      Name: download/uiperfab/uisceneview/uirootview.assetbundle
+      Dependencies:
+        Dependency_0: download/uisource/background/bg.assetbundle
+    Info_10:
+      Name: download/uiperfab/uiwindows/testview.assetbundle
+      Dependencies: {}
+    Info_11:
+      Name: download/uiperfab/uiwindows/pan_messageview.assetbundle
+      Dependencies:
+        Dependency_0: download/uisource/background/colse.assetbundle
+        Dependency_1: download/uisource/background/bg_004.assetbundle
+        Dependency_2: download/uisource/background/bg.assetbundle
+        Dependency_3: download/uisource/background/grid.assetbundle
+        Dependency_4: download/uisource/background/button.assetbundle
+    Info_12:
+      Name: download/xluacodetxt/core.lua.assetbundle
+      Dependencies: {}
+    Info_13:
+      Name: download/xluacodetxt/ctrlmanager.lua.assetbundle
+      Dependencies: {}
+    Info_14:
+      Name: download/xluacodetxt/gameinit.lua.assetbundle
+      Dependencies: {}
+    Info_15:
+      Name: download/xluacodetxt/main.lua.assetbundle
+      Dependencies: {}
+    Info_16:
+      Name: download/xluacodetxt/common/define.lua.assetbundle
+      Dependencies: {}
+    Info_17:
+      Name: download/xluacodetxt/data/dbmodelmgr.lua.assetbundle
+      Dependencies: {}
+    Info_18:
+      Name: download/xluacodetxt/data/messagedbmodelext.lua.assetbundle
+      Dependencies: {}
+    Info_19:
+      Name: download/xluacodetxt/data/create/messagedbmodel.lua.assetbundle
+      Dependencies: {}
+    Info_20:
+      Name: download/xluacodetxt/data/create/messageentity.lua.assetbundle
+      Dependencies: {}
+    Info_21:
+      Name: download/xluacodetxt/gamectrl/messagectrl.lua.assetbundle
+      Dependencies: {}
+    Info_22:
+      Name: download/xluacodetxt/gamectrl/uirootctrl.lua.assetbundle
+      Dependencies: {}
+    Info_23:
+      Name: download/xluacodetxt/gameview/messageview.lua.assetbundle
+      Dependencies: {}
+    Info_24:
+      Name: download/xluacodetxt/gameview/uirootview.lua.assetbundle
+      Dependencies: {}
+    Info_25:
+      Name: download/xluacodetxt/proto/message_searchtaskproto.lua.assetbundle
+      Dependencies: {}
+    Info_26:
+      Name: download/xluacodetxt/proto/message_searchtaskreyurnproto.lua.assetbundle
+      Dependencies: {}
+    Info_27:
+      Name: download/xluacodetxt/template/ctrltemplate.lua.assetbundle
+      Dependencies: {}
+    Info_28:
+      Name: download/xluacodetxt/template/viewtemplate.lua.assetbundle
+      Dependencies: {}
+    Info_29:
+      Name: download/scene/init.unity3d
+      Dependencies:
+        Dependency_0: download/uisource/background/init.assetbundle
+    Info_30:
+      Name: download/scene/loading.unity3d
+      Dependencies:
+        Dependency_0: download/uisource/background/loading_bg.assetbundle
+    Info_31:
+      Name: download/scene/logon.unity3d
+      Dependencies: {}

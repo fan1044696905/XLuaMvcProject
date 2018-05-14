@@ -22,7 +22,6 @@ end
 
 --加载视图
 function GameInit.LoadView(type)
-	
 	local ctrl = CtrlManager.GetCtrl(type);
 	if ctrl ~= nil then
 		ctrl.Awake();

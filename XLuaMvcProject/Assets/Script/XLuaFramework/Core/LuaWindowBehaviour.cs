@@ -47,8 +47,6 @@ public class LuaWindowBehaviour : UIWindowViewBase
         }
 
         prefabName = prefabName.Replace("Pan_", "");
-
-        Debug.Log(prefabName);
         luaAwake = scriptEnv.GetInPath<delLuaAwake>(prefabName + ".awake");
         luaStart = scriptEnv.GetInPath<delLuaStart>(prefabName + ".start");
         luaUpdate = scriptEnv.GetInPath<delLuaUpdate>(prefabName + ".update");

@@ -20,9 +20,7 @@ public class LuaManager : SingletonMono<LuaManager>
 
         LuaEnv = new LuaEnv();
         LuaEnv.AddLoader(MyLoader);
-#if DEBUG_MODEL
-        //LuaEnv.DoString(string.Format("package.path = '{0}/?.lua'", Application.dataPath));
-#else
+#if DEBUG_MODEL==false && DISABLE_ASSETBUNDLE==false
         List<string> tempList = LuaHelper.Instance.luaList;
         tempList.Clear();
         AssetBundleMgr.Instance.LoadOrDownloadLuaCode(string.Format("{0}.lua.assetbundle", "Core"), (TextAsset ta) =>
@@ -47,7 +45,7 @@ public class LuaManager : SingletonMono<LuaManager>
             });
         }
 #endif
-        
+
         //这里相当于初始化路径 也就是 Application.dataPath 文件夹下 .lua的文件都会被初始化加载
         //LuaEnv.DoString(string.Format("package.path = '{0}/?.lua'", Application.dataPath));
         //LuaEnv.DoString(string.Format("package.path = '{0}/?.lua'", Application.persistentDataPath));
@@ -80,6 +78,7 @@ public class LuaManager : SingletonMono<LuaManager>
 
     public byte[] MyLoader(ref string filePath)
     {
+        //调试模式加载本地代码
 #if DEBUG_MODEL
         string absPath = Application.dataPath +"/"+ AppConst.XLuaCodePath + filePath + ".lua";
 #else

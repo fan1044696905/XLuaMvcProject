@@ -11,7 +11,7 @@ public class InitSceneCtrl : MonoBehaviour {
     void Start()
     {
 #if DISABLE_ASSETBUNDLE
-        SceneMgr.Instance.LoadToLogOn();
+        SceneMgr.Instance.LoadScene("LogOn");
 #else
         //获取服务器下发的资源服务器地址
         //DownloadMgr.DownLoadBaseUrl = GlobalInit.Instance.CurrChannelInitConfig.SourceUrl;
@@ -22,7 +22,7 @@ public class InitSceneCtrl : MonoBehaviour {
 
     void OnInitComplete()
     {
-        //启动协程
+        //启动登陆场景协程
         StartCoroutine(LoadLogOn());
     }
 
@@ -34,7 +34,6 @@ public class InitSceneCtrl : MonoBehaviour {
     private IEnumerator LoadLogOn()
     {
         yield return new WaitForSeconds(0.3f);
-        SceneMgr.Instance.LoadToLogOn();
-
+        SceneMgr.Instance.LoadScene(AppConst.LogOn);
     }
 }

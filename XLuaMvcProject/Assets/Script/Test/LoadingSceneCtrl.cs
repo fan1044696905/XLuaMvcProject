@@ -74,58 +74,22 @@ public class LoadingSceneCtrl : MonoBehaviour
     private IEnumerator LoadingScene()
     {
         //场景名称
-        string strSceneName = string.Empty;
-
-        switch (SceneMgr.Instance.E_CurrentSceneType)
-        {
-            case E_SceneType.LogOn:
-                strSceneName = "LogOn";
-                break;
-            case E_SceneType.SelectRole:
-                strSceneName = "";
-                break;
-            case E_SceneType.WorldMap:
-                //WorldMapEntity worldMapEntity = WorldMapDBModel.Instance.Get(SceneMgr.Instance.CurrWorldMapId);
-
-                //if (worldMapEntity != null)
-                //{
-                //    strSceneName = worldMapEntity.SceneName;
-                //    AppDebug.Log("worldMapEntity=" + strSceneName);
-                //}
-                break;
-
-            case E_SceneType.GameLevel:
-                //GameLevelEntity gamelevelEntity = GameLevelDBModel.Instance.Get(SceneMgr.Instance.CurrGamelevelId);
-                //if (gamelevelEntity != null)
-                //{
-                //    strSceneName = gamelevelEntity.SceneName;
-                //    AppDebug.Log("gamelevelEntity=" + strSceneName);
-                //}
-                break;
-        }
+        string strSceneName = SceneMgr.Instance.CurrentSceneType;
 
         //如果目标场景名称是空，则直接返回
         if (string.IsNullOrEmpty(strSceneName))
         {
             yield break;
         }
-
-
-        if (SceneMgr.Instance.E_CurrentSceneType == E_SceneType.SelectRole || SceneMgr.Instance.E_CurrentSceneType == E_SceneType.WorldMap || SceneMgr.Instance.E_CurrentSceneType == E_SceneType.GameLevel)
-        {
-            //从AssetBundle包中异步加载选人场景
-            StartCoroutine(Load(string.Format("Download/Scene/{0}.unity3d", strSceneName), strSceneName));
-        }
-        else
-        {
-            //加载
-            m_Async = SceneManager.LoadSceneAsync(strSceneName, LoadSceneMode.Additive);
-
-            //设置允许场景激活为false
-            m_Async.allowSceneActivation = false;
-
-            yield return m_Async;
-        }
+#if DISABLE_ASSETBUNDLE
+        //加载
+        m_Async = SceneManager.LoadSceneAsync(strSceneName, LoadSceneMode.Additive);
+        //设置允许场景激活为false
+        m_Async.allowSceneActivation = false;
+        yield return m_Async;
+#else
+        StartCoroutine(Load(string.Format("Download/Scene/{0}.unity3d", strSceneName), strSceneName));
+#endif
     }
 
 

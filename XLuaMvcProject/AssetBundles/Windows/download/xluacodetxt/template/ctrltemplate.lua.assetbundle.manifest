@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3153046519
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 64a0bc43afc6422abd0c2242ee7ba87f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1033bf7ddfd4c6d43e7a6382c0a0a61a
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+Assets:
+- Assets/Download/XLuaCodeTxt/Template/CtrlTemplate.lua.txt
+Dependencies: []

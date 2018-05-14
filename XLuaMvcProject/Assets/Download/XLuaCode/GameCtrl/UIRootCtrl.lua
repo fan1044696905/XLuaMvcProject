@@ -18,7 +18,8 @@ function UIRootCtrl.Awake()
 	print('主界面 启动了');
 	--克隆UIRoot
 	--CS.LuaHelper.Instance.UISceneCtrl:LoadSceneUI("UISceneView/UIRootView",this.OnCreate,this.OnLoadComplete);
-	CS.LuaHelper.Instance.UISceneCtrl:LoadSceneUI(1,"Download/UIPerfab/UISceneView/UIRootView",this.OnCreate);
+	CS.LuaHelper.Instance.UISceneCtrl:LoadSceneUI("UIRootView",this.OnCreate);
+	--CS.LuaHelper.Instance.UISceneCtrl:LoadSceneUI(1,"UIRootView",this.OnCreate);
 end
 
 --启动事件--

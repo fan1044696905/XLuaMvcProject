@@ -12,7 +12,7 @@ public class SceneMgr : Singleton<SceneMgr>
     /// <summary>
     /// 当前场景类型
     /// </summary>
-    public E_SceneType E_CurrentSceneType { get; private set; }
+    public string CurrentSceneType { get; private set; }
 
     /// <summary>
     /// 当前玩法类型
@@ -29,21 +29,19 @@ public class SceneMgr : Singleton<SceneMgr>
         //服务器返回角色进入世界地图场景消息
         
     }
-
     
     /// <summary>
-    /// 去登陆场景
+    /// 加载场景
     /// </summary>
-    public void LoadToLogOn()
+    /// <param name="sceneName">场景名字</param>
+    public void LoadScene(string sceneName)
     {
-        E_CurrentSceneType = E_SceneType.LogOn;
-        SceneManager.LoadScene("Loading");
+        CurrentSceneType = sceneName;
+        SceneManager.LoadScene(AppConst.Loading);
     }
-
 
     public override void Dispose()
     {
         base.Dispose();
-       
     }
 }

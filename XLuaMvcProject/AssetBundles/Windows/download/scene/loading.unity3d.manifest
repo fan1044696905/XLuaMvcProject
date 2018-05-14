@@ -1,0 +1,15 @@
+ManifestFileVersion: 0
+CRC: 2278103255
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d9372074b97ca1c76e040361dd933038
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 31d6cfe0d16ae931b73c59d7e0c089c0
+HashAppended: 0
+ClassTypes: []
+Assets:
+- Assets/Download/Scene/Loading.unity
+Dependencies:
+- D:/Documents/XLuaMvcProject/XLuaMvcProject/Assets/../AssetBundles/Windows/download/uisource/background/loading_bg.assetbundle
