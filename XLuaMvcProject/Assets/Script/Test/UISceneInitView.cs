@@ -14,12 +14,26 @@ public class UISceneInitView : MonoBehaviour {
     [SerializeField]
     private Slider slider_Load;
 
+    private Image bg;
+
     public static UISceneInitView Instance;
 
 
     void Awake()
     {
         Instance = this;
+        bg = transform.GetComponent<Image>("Image");
+        //bg.SetSprite("Atlas", "Atlas0");
+        //AssetBundleMgr.Instance.LoadSprite( "BackGround","grid", OnCreate=> 
+        //{
+        //    //bg.sprite = 
+        //    Debug.Log("ssssssssssss");
+        //});
+#if DISABLE_ASSETBUNDLE
+        
+#else
+
+#endif
     }
 
 

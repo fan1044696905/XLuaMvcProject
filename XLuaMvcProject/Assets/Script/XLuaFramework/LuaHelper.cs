@@ -21,9 +21,9 @@ public class LuaHelper : Singleton<LuaHelper>
     /// <summary>
     /// 视图管理
     /// </summary>
-    public UIViewUtil UIViewUtil
+    public UIWindowsUtil UIWindowsUtil
     {
-        get { return UIViewUtil.Instance; }
+        get { return UIWindowsUtil.Instance; }
     }
 
     /// <summary>

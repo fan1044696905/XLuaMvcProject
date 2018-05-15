@@ -18,12 +18,12 @@ public class UIWindowViewBase : UIViewBase
     /// 打开方式
     /// </summary>
     [SerializeField]
-    public E_WindowShowStyle EshowStyle = E_WindowShowStyle.Normal;
+    public E_WindowShowStyle EshowStyle = E_WindowShowStyle.CenterToBig;
 
     /// <summary>
     /// 动画曲线
     /// </summary>
-    public DG.Tweening.Ease Eease = DG.Tweening.Ease.Linear;
+    public DG.Tweening.Ease Eease = DG.Tweening.Ease.OutBack;
 
     /// <summary>
     /// 打开或关闭动画效果持续时间
@@ -57,7 +57,7 @@ public class UIWindowViewBase : UIViewBase
     /// </summary>
     public virtual void Close()
     {
-        UIViewUtil.Instance.CloseWindow(ViewName);
+        UIWindowsUtil.Instance.CloseWindow(ViewName);
     }
 
     /// <summary>
@@ -79,7 +79,7 @@ public class UIWindowViewBase : UIViewBase
 
         if (m_NextOpenType != E_WindowUIType.None)
         {
-            UIViewMgr.Instance.OpenWindow(m_NextOpenType);
+            UIWindowsMgr.Instance.OpenWindow(m_NextOpenType);
         }
 
     }

@@ -50,7 +50,7 @@ public class LoadingSceneCtrl : MonoBehaviour
         LayerUIMgr.Instance.Reset();
         //启动协程
         StartCoroutine(LoadingScene());
-        UIViewUtil.Instance.CloseAllWindow();
+        UIWindowsUtil.Instance.CloseAllWindow();
 
     }
 

@@ -14,7 +14,7 @@ public class AppConst  {
 #if DEBUG_MODEL
     public const bool DebugMode = true;// 是否开启调试模式
 #else
-    public const bool DebugMode = false;// 是否开启调试模式//真正发布的时候设置为false
+    public const bool DebugMode = false;// 是否开启调试模式
 #endif
     public const string ServerUrl = "http://192.168.1.102:8080/Web/";// 服务器地址(DownloadMgr)
     public const int DownLoadRountineNum = 5;// 下载器的数量(DownloadMgr)
@@ -29,6 +29,7 @@ public class AppConst  {
     public const string XLuaCodePath = "Download/XLuaCode/";//代码短路径 Application.dataPath(persistentDataPath) + "/Download/XLuaCode/" +"xxxxxxxxx.lua"
     public const string XLuaCodeTxtPath = "Download/XLuaCodeTxt/";//AssetBundle代码所在的短路径
     public const string XLuaCodeDownloadPath = @"\Download\XLuaCode\";//AssetBundle代码所在的短路径
-    public const string UIViewPath = "Download/UIPerfab/UISceneView/{0}.assetbundle";//UIView路径
-    public const string UIWindowPath = "Download/UIPerfab/UIWindows/{0}.assetbundle";//UIWindows路径
+    public const string UIViewPath = "Download/UIPrefab/UISceneView/{0}.assetbundle";//UIView路径
+    public const string UIWindowPath = "Download/UIPrefab/UIWindows/{0}.assetbundle";//UIWindows路径
+    public const string UISourcePath = "Download/UISource/{0}.assetbundle";//UISource路径
 }

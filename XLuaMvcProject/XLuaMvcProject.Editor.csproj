@@ -182,6 +182,7 @@
     <Compile Include="Assets\Editor\AssetBundle\AssetBundleDAL.cs" />
     <Compile Include="Assets\Editor\AssetBundle\AssetBundleEntity.cs" />
     <Compile Include="Assets\Editor\AssetBundleWindow.cs" />
+    <Compile Include="Assets\Editor\AtlasEditor.cs" />
     <Compile Include="Assets\Editor\Menu.cs" />
     <Compile Include="Assets\Editor\SettingsWindow.cs" />
     <Compile Include="Assets\XLua\Src\Editor\Generator.cs" />

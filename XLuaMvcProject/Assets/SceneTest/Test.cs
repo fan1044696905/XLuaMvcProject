@@ -5,24 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Test : MonoBehaviour {
 
-    private Image image;
+    private Image[] images;
+    private int[] strs = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1 };
 	void Start () {
-        image = gameObject.GetComponent<Image>("Image2");
-        EventTriggerListener.Get(image.gameObject).onClick += onClick;
+        images = transform.GetComponentsInChildren<Image>();
+        for (int i = 0; i < images.Length; i++)
+        {
+            //images[i].SetSprite("Atlas/fish", strs[i].ToString());
+            images[i].SetSprite("Atlas/fishsss", "fishsss");
+        }
     }
-
-    private void onClick(GameObject go)
-    {
-        Debug.Log(go.name);
-    }
-
-    private void OnClick(GameObject _listener, object _args, object[] _params)
-    {
-        Debug.Log("ssssssssssss");
-    }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 }

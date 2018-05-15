@@ -45,8 +45,7 @@ public class LuaWindowBehaviour : UIWindowViewBase
         {
             prefabName = prefabName.Split(new string[] { "(Clone)" }, StringSplitOptions.RemoveEmptyEntries)[0];
         }
-
-        prefabName = prefabName.Replace("Pan_", "");
+        
         luaAwake = scriptEnv.GetInPath<delLuaAwake>(prefabName + ".awake");
         luaStart = scriptEnv.GetInPath<delLuaStart>(prefabName + ".start");
         luaUpdate = scriptEnv.GetInPath<delLuaUpdate>(prefabName + ".update");

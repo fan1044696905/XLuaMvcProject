@@ -28,9 +28,12 @@ public class AssetBundleLoader : IDisposable
 
         //从内存加载资源包
         bundle = AssetBundle.LoadFromMemory(LocalFileMgr.Instance.GetBuffer(fullPath));
+        for (int i = 0; i < bundle.LoadAllAssets().Length; i++)
+        {
+            Debug.Log(bundle.LoadAllAssets()[i].name);
+        }
     }
-
-
+    
 
     /// <summary>
     /// 加载Asset资源

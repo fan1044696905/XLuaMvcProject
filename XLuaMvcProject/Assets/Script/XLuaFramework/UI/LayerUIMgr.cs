@@ -30,7 +30,7 @@ public class LayerUIMgr : Singleton<LayerUIMgr>
     public void CheckOpenWindow()
     {
         m_UIViewLayer--;
-        if (UIViewUtil.Instance.OpenWindowCount == 0)
+        if (UIWindowsUtil.Instance.OpenWindowCount == 0)
         {
             Reset();
         }

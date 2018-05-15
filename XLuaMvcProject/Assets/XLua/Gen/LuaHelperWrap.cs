@@ -34,7 +34,7 @@ namespace XLua.CSObjectWrap
 			
 			
 			Utils.RegisterFunc(L, Utils.GETTER_IDX, "UISceneCtrl", _g_get_UISceneCtrl);
-            Utils.RegisterFunc(L, Utils.GETTER_IDX, "UIViewUtil", _g_get_UIViewUtil);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "UIWindowsUtil", _g_get_UIWindowsUtil);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "AssetBundleMgr", _g_get_AssetBundleMgr);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "luaList", _g_get_luaList);
             
@@ -346,13 +346,13 @@ namespace XLua.CSObjectWrap
         }
         
         [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-        static int _g_get_UIViewUtil(RealStatePtr L)
+        static int _g_get_UIWindowsUtil(RealStatePtr L)
         {
 		    try {
                 ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			
                 LuaHelper gen_to_be_invoked = (LuaHelper)translator.FastGetCSObj(L, 1);
-                translator.Push(L, gen_to_be_invoked.UIViewUtil);
+                translator.Push(L, gen_to_be_invoked.UIWindowsUtil);
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
             }

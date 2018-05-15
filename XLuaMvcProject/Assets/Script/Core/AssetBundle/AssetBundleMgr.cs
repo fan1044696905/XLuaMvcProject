@@ -50,13 +50,12 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
 
         using (AssetBundleLoader loader = new AssetBundleLoader(assetName))
         {
-                m_Manifest = loader.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+            m_Manifest = loader.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
         }
         Debuger.Log("加载依赖文件配置 完毕");
     }
 
-
-
+    
     public void LoadOrDownloadForLua(string path, string name, XLuaCustomExport.OnCreate OnCreate)
     {
         LoadOrDownload<GameObject>(path, name, null, OnCreate: OnCreate, type: 0);
@@ -101,8 +100,10 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
         string str = strs[strs.Length - 1].Split('.')[0];
         LoadOrDownload<TextAsset>(AppConst.XLuaCodeTxtPath + path, str + ".lua", onComplete, OnCreate, 0);
     }
-
-
+    public void LoadSprite(string path, string name, Action<Texture2D> onComplete, XLuaCustomExport.OnCreate OnCreate = null,  byte type = 0)
+    {
+        LoadOrDownload<Texture2D>(string.Format(AppConst.UISourcePath,path), name, onComplete, OnCreate, 0);
+    }
     /// <summary>
     /// 加载或者下载资源
     /// </summary>
@@ -113,8 +114,6 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
     /// <param name="type">0 = Prefab 1 = PNG</param>
     public void LoadOrDownload<T>(string path, string name, Action<T> onComplete,XLuaCustomExport.OnCreate OnCreate=null, byte type = 0)where T: UnityEngine.Object
     {
-        //string[] strs = path.Split('/');
-        //string str = strs[strs.Length - 1].Split('.')[0];
         lock (this)
         {
 #if DISABLE_ASSETBUNDLE
@@ -153,7 +152,6 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
             //3.先检查所有依赖项 是否已经下载 没下载的就下载
             CheckDps(0, arrDps, () =>
             {
-                //string fullPath = LocalFileMgr.Instance.LocalFilePath + path;
                 string fullPath = (LocalFileMgr.Instance.LocalFilePath + path).ToLower();
                 #region 下载或者加载主资源
 
@@ -221,10 +219,8 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
                 }
                 else
                 {
-                    Debug.Log("fullPath1 = " + fullPath);
                     if (m_AssetDic.ContainsKey(fullPath))
                     {
-                        Debug.Log("fullPath = "+fullPath);
                         if (onComplete != null)
                         {
                             onComplete(m_AssetDic[fullPath] as T);

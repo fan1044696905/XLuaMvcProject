@@ -91,5 +91,18 @@ public static class MonoBehaviourExtended
         });
     }
     #endregion
+
+    #region ------ Set Image Sprite ------
+
+    public static void SetSprite(this Image image,string path,string name)
+    {
+        AssetBundleMgr.Instance.LoadSprite(path, name, (Texture2D t2d) =>
+        {
+            Sprite sp = Sprite.Create(t2d, new Rect(0, 0, t2d.width, t2d.height), Vector2.zero);
+            image.sprite = sp;
+        });
+    }
+
+    #endregion
 }
 

@@ -182,8 +182,8 @@
     <Compile Include="Assets\Script\XLuaFramework\UI\UIBase\UIViewBase.cs" />
     <Compile Include="Assets\Script\XLuaFramework\UI\UIBase\UIWindowViewBase.cs" />
     <Compile Include="Assets\Script\XLuaFramework\UI\UISceneCtrl.cs" />
-    <Compile Include="Assets\Script\XLuaFramework\UI\UIViewMgr.cs" />
-    <Compile Include="Assets\Script\XLuaFramework\UI\UIViewUtil.cs" />
+    <Compile Include="Assets\Script\XLuaFramework\UI\UIWindowsMgr.cs" />
+    <Compile Include="Assets\Script\XLuaFramework\UI\UIWindowsUtil.cs" />
     <Compile Include="Assets\XLua\ExampleGenConfig.cs" />
     <Compile Include="Assets\XLua\Gen\CSCallLuaItfDBridge.cs" />
     <Compile Include="Assets\XLua\Gen\DGTweeningCoreABSSequentiableWrap.cs" />

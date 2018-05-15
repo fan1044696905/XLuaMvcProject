@@ -15,7 +15,7 @@ end
 
 function MessageCtrl.Awake()	
 	print('MessageCtrl.Awake');
-	CS.LuaHelper.Instance.UIViewUtil:LoadWindowForLua("MessageView",this.OnCreate,"Download/UIPerfab/UIWindows/Pan_MessageView.assetbundle");
+	CS.LuaHelper.Instance.UIWindowsUtil:LoadWindowForLua("MessageView",this.OnCreate);
 end
 
 --启动事件--
@@ -28,7 +28,7 @@ function MessageCtrl.OnStart()
 	print("任务列表创建完毕");	
 	--数据实体
 	--拿出镜像
-	CS.LuaHelper.Instance.AssetBundleMgr:LoadOrDownloadForLua("Download/UIPerfab/UIWindows/TaskItemView.assetbundle", "TaskItemView",this.OnLoadItem);
+	CS.LuaHelper.Instance.AssetBundleMgr:LoadOrDownloadForLua("Download/UIPrefab/UIWindows/TaskItemView.assetbundle", "TaskItemView",this.OnLoadItem);
 
 end
 
