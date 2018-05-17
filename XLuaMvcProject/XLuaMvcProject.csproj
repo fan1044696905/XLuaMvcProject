@@ -115,13 +115,13 @@
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\SceneTest\Test.cs" />
     <Compile Include="Assets\Script\AppConst.cs" />
+    <Compile Include="Assets\Script\Common\AudioManager.cs" />
     <Compile Include="Assets\Script\Common\DelegateDefine.cs" />
     <Compile Include="Assets\Script\Common\EnumDefine.cs" />
     <Compile Include="Assets\Script\Common\EventTriggerListener.cs" />
     <Compile Include="Assets\Script\Common\GlobalInit.cs" />
     <Compile Include="Assets\Script\Common\LocalFileMgr.cs" />
     <Compile Include="Assets\Script\Common\SceneMgr.cs" />
-    <Compile Include="Assets\Script\Common\Singleton\AtlasMgr.cs" />
     <Compile Include="Assets\Script\Common\Singleton\Singleton.cs" />
     <Compile Include="Assets\Script\Common\Singleton\SingletonMono.cs" />
     <Compile Include="Assets\Script\Core\AssetBundle\AssetBundleLoader.cs" />
@@ -289,7 +289,6 @@
     <None Include="Assets\Demigiant\DemiLib\DemiLib.xml" />
     <None Include="Assets\Demigiant\DemiLib\Editor\DemiEditor.XML" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
-    <None Include="Assets\Editor\AssetBundle\AssetBundleConfig.xml" />
     <None Include="Assets\Resources\Config\ChannelConfig.xml" />
     <None Include="Assets\XLua\CHANGELOG.txt" />
     <None Include="Assets\XLua\Gen\link.xml" />

@@ -179,9 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
-    <Compile Include="Assets\Editor\AssetBundle\AssetBundleDAL.cs" />
-    <Compile Include="Assets\Editor\AssetBundle\AssetBundleEntity.cs" />
-    <Compile Include="Assets\Editor\AssetBundleWindow.cs" />
     <Compile Include="Assets\Editor\AtlasEditor.cs" />
     <Compile Include="Assets\Editor\Menu.cs" />
     <Compile Include="Assets\Editor\SettingsWindow.cs" />
@@ -203,7 +200,6 @@
     <None Include="Assets\Demigiant\DemiLib\DemiLib.xml" />
     <None Include="Assets\Demigiant\DemiLib\Editor\DemiEditor.XML" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
-    <None Include="Assets\Editor\AssetBundle\AssetBundleConfig.xml" />
     <None Include="Assets\Resources\Config\ChannelConfig.xml" />
     <None Include="Assets\XLua\CHANGELOG.txt" />
     <None Include="Assets\XLua\Gen\link.xml" />

@@ -80,7 +80,7 @@ public class LuaManager : SingletonMono<LuaManager>
     {
         //调试模式加载本地代码
 #if DEBUG_MODEL
-        string absPath = Application.dataPath +"/"+ AppConst.XLuaCodePath + filePath + ".lua";
+        string absPath = AppConst.XLuaCodePath + filePath + ".lua";
 #else
         string absPath = Application.persistentDataPath + "/" + AppConst.XLuaCodePath + filePath + ".lua";
 #endif

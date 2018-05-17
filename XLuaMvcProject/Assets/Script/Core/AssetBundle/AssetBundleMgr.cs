@@ -102,10 +102,7 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
         string str = strs[strs.Length - 1].Split('.')[0];
         LoadOrDownload<TextAsset>(AppConst.XLuaCodeTxtPath + path, str + ".lua", onComplete, OnCreate, 0);
     }
-    public void LoadSprite(string path, string name, Action<Texture2D> onComplete, XLuaCustomExport.OnCreate OnCreate = null,  byte type = 0)
-    {
-        LoadOrDownload<Texture2D>(string.Format(AppConst.UISourcePath,path), name, onComplete, OnCreate, 0);
-    }
+
     public Sprite LoadAtlasSprite(string atlasName, string name)
     {
         LoadManifestBundle();
@@ -137,9 +134,7 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
         lock (this)
         {
 #if DISABLE_ASSETBUNDLE
-
             string newPath = string.Empty;
-
             switch (type)
             {
                 case 0:
