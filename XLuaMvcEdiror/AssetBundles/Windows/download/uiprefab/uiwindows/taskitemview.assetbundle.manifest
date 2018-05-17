@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+CRC: 4127797525
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3e9a2806d0e45f886f0f7c7360df8a6b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8800cd3147e10d23aef81f8e35b7673c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Download/UIPrefab/UIWindows/TaskItemView.prefab
+Dependencies:
+- D:/Documents/XLuaMvcProject/XLuaMvcEdiror/Assets/../AssetBundles/Windows/download/uisource/background/grid.assetbundle

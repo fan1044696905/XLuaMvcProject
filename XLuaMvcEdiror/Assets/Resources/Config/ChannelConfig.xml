@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <!--服务器地址-->
+  <WedAccountUrl Value="http://192.168.1.1" />
+
+  <!--渠道号-->
+  <ChannelId Value="0" />
+
+  <!--内部版本号-->
+  <InnerVersion Value="1001" />
+  
+</Root>

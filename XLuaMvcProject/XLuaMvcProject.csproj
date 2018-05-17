@@ -121,6 +121,7 @@
     <Compile Include="Assets\Script\Common\GlobalInit.cs" />
     <Compile Include="Assets\Script\Common\LocalFileMgr.cs" />
     <Compile Include="Assets\Script\Common\SceneMgr.cs" />
+    <Compile Include="Assets\Script\Common\Singleton\AtlasMgr.cs" />
     <Compile Include="Assets\Script\Common\Singleton\Singleton.cs" />
     <Compile Include="Assets\Script\Common\Singleton\SingletonMono.cs" />
     <Compile Include="Assets\Script\Core\AssetBundle\AssetBundleLoader.cs" />
