@@ -26,7 +26,6 @@ public class AssetBundleLoader : IDisposable
         string fullPath = isFullPath ? assetBundlePath : LocalFileMgr.Instance.LocalFilePath + assetBundlePath;
         //从内存加载资源包
         bundle = AssetBundle.LoadFromMemory(LocalFileMgr.Instance.GetBuffer(fullPath));
-        
     }
     
 
@@ -77,12 +76,6 @@ public class AssetBundleLoader : IDisposable
         }
         Debuger.LogError("cant find:" + name + " at the atlasName:" + atlasName);
         return null;
-    }
-    public Sprite LoadBgSprite(string bgName)
-    {
-        Texture2D tx =  bundle.LoadAsset(bgName) as Texture2D;
-        Sprite sp = Sprite.Create(tx, new Rect(0, 0, tx.width, tx.height),Vector2.zero);
-        return sp ;
     }
     /// <summary>
     /// 加载所有资源

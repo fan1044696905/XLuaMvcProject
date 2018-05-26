@@ -23,12 +23,13 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
     /// </summary>
     private Dictionary<string, UnityEngine.Object> m_AssetDic = new Dictionary<string, UnityEngine.Object>();
 
+    private Dictionary<string, AssetBundleLoader> atlasBundleDic = new Dictionary<string, AssetBundleLoader>();
     /// <summary>
     /// 依赖项的列表
     /// </summary>
     private Dictionary<string, AssetBundleLoader> m_AssetBundleDic = new Dictionary<string, AssetBundleLoader>();
 
-
+    
 
     /// <summary>
     /// 加载依赖文件配置
@@ -89,37 +90,38 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
         string str = strs[strs.Length - 1].Split('.')[0];
         LoadOrDownload<TextAsset>(AppConst.XLuaCodeTxtPath+path, str+".lua", onComplete, OnCreate, 0);
     }
+    
 
     /// <summary>
-    /// 加载或者下载资源
+    /// 加载背景图片
     /// </summary>
-    /// <param name="path">短路径</param>
-    /// <param name="onComplete">C#回调</param>
-    /// <param name="OnCreate">Lua回调</param>
-    public void LoadOrDownloadScene(string path, Action<TextAsset> onComplete, XLuaCustomExport.OnCreate OnCreate = null, byte type = 0)
+    /// <param name="path">图片路径</param>
+    /// <param name="name">图片名</param>
+    /// <returns></returns>
+    public Sprite LoadBgSprite(string path,string name)
     {
-        string[] strs = path.Split('/');
-        string str = strs[strs.Length - 1].Split('.')[0];
-        LoadOrDownload<TextAsset>(AppConst.XLuaCodeTxtPath + path, str + ".lua", onComplete, OnCreate, 0);
+        Sprite sp = null;
+        LoadOrDownload<Texture2D>(path, name, (Texture2D texture2D) =>
+        {
+            sp = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
+        });
+        return sp;
     }
 
-    public Sprite LoadAtlasSprite(string atlasName, string name)
+    /// <summary>
+    /// 加载音乐/音效
+    /// </summary>
+    /// <param name="path">路径</param>
+    /// <param name="name">音乐文件名</param>
+    /// <returns></returns>
+    public AudioClip LoadAudio(string path,string name)
     {
-        LoadManifestBundle();
-        string path = LocalFileMgr.Instance.LocalFilePath + string.Format(AppConst.UISourcePath,"Atlas/"+ atlasName);
-        using (AssetBundleLoader loader = new AssetBundleLoader(path, isFullPath: true))
+        AudioClip ac = null;
+        LoadOrDownload<AudioClip>(path, name, (AudioClip audioclip) => 
         {
-            return loader.LoadAtlasSprite(atlasName, name);
-        }
-    }
-    public Sprite LoadBgSprite(string bgName)
-    {
-        LoadManifestBundle();
-        string path = LocalFileMgr.Instance.LocalFilePath + string.Format(AppConst.UISourcePath, "BackGround/" + bgName);
-        using (AssetBundleLoader loader = new AssetBundleLoader(path, isFullPath: true))
-        {
-            return loader.LoadBgSprite(bgName);
-        }
+            ac = audioclip;
+        });
+        return ac;
     }
     /// <summary>
     /// 加载或者下载资源
@@ -345,7 +347,7 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
     /// <summary>
     /// 加载镜像
     /// </summary>
-    /// <param name="ptah">资源路径</param>
+    /// <param name="path">资源路径</param>
     /// <param name="name">资源名称</param>
     /// <returns></returns>
     public GameObject Load(string path, string name)
@@ -419,6 +421,7 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
         m_AssetBundleDic.Clear();
 
         m_AssetDic.Clear();
+        AtlasManager.Instance.Dispose();
     }
 
 

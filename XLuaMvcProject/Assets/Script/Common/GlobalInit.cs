@@ -5,13 +5,13 @@ using UnityEngine;
 /// <summary>
 /// 全局初始化
 /// </summary>
-public class GlobalInit : MonoBehaviour
+public class GlobalInit : SingletonMono<GlobalInit>
 {
 
     /// <summary>
     /// 单例
     /// </summary>
-    public static GlobalInit Instance;
+    //public static GlobalInit Instance;
 
     /// <summary>
     /// UI动画曲线
@@ -37,13 +37,13 @@ public class GlobalInit : MonoBehaviour
     /// 内部版本号
     /// </summary>
     public int InnerVersion;
-
-
+    
     void Awake()
     {
-        Instance = this;
+        //Instance = this;
         DontDestroyOnLoad(gameObject);
         Debuger.DebugMode = AppConst.DebugMode;
+        
     }
 
     void Start()
@@ -79,8 +79,10 @@ public class GlobalInit : MonoBehaviour
         innerVersion = root.Element("InnerVersion").Attribute("Value").Value.ToInt();
     }
 
-
-
+    private void FixedUpdate()
+    {
+        FrameTimerManager.Instance.FrameHandle();
+    }
 
 
 

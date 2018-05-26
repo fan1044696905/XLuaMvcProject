@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2933924210
+CRC: 53752830
 Hashes:
   AssetFileHash:
     serializedVersion: 2
@@ -12,4 +12,4 @@ ClassTypes: []
 Assets:
 - Assets/Download/Scene/Init.unity
 Dependencies:
-- D:/Documents/XLuaMvcProject/XLuaMvcEdiror/Assets/../AssetBundles/Windows/download/uisource/background/init.assetbundle
+- D:/Documents/XLuaMvcProject/XLuaMvcEditor/Assets/../AssetBundles/Windows/download/uisource/background/init.assetbundle

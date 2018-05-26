@@ -91,7 +91,7 @@ public class DownloadMgr : Singleton<DownloadMgr>
 #endif
 
             string versionFileUrl = m_StreamingAssetsPath + AppConst.VersionFileName;
-
+            
             GlobalInit.Instance.StartCoroutine(ReadStreamingAssetVersionFile(versionFileUrl, OnReadStreaminAssetOver));
         }
     }
@@ -229,7 +229,7 @@ public class DownloadMgr : Singleton<DownloadMgr>
     {
         //得到服务端数据列表
         m_ServerDataList = serverDownloadData;
-
+        
         if (File.Exists(m_LocalVersionPath))
         {
             //如果本地存在版本文件 则和服务器端的进行对比
@@ -289,10 +289,8 @@ public class DownloadMgr : Singleton<DownloadMgr>
             {
                 OnInitComplete();
             }
+            return;
         }
-
-
-
         //拿到下载列表 m_NeedDownLoadDataList 进行下载 
         AssetBundleDownload.Instance.DownloadFiles(m_NeedDownLoadDataList);
 
@@ -396,9 +394,8 @@ public class DownloadMgr : Singleton<DownloadMgr>
     public void ModifyLocalData(DownloadDataEntity entity)
     {
         if (m_LocalDataList == null) return;
-
         bool isExists = false;
-
+        
         for (int i = 0; i < m_LocalDataList.Count; i++)
         {
             if (m_LocalDataList[i].FullName.Equals(entity.FullName, StringComparison.CurrentCultureIgnoreCase))

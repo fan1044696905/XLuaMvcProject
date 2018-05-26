@@ -1,115 +1,202 @@
 ManifestFileVersion: 0
-CRC: 3677092897
+CRC: 2529650790
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: download/scene/loading.unity3d
+      Name: download/uiprefab/uisceneview/uirootview.assetbundle
       Dependencies:
-        Dependency_0: download/uisource/background/loading_bg.assetbundle
+        Dependency_0: download/uisource/background/bg.assetbundle
     Info_1:
-      Name: download/scene/logon.unity3d
-      Dependencies: {}
-    Info_2:
-      Name: download/scene/init.unity3d
+      Name: download/uiprefab/uiwindows/messageview.assetbundle
       Dependencies:
-        Dependency_0: download/uisource/background/init.assetbundle
+        Dependency_0: download/uisource/background/bg.assetbundle
+        Dependency_1: download/uisource/background/bg_004.assetbundle
+        Dependency_2: download/uisource/background/button.assetbundle
+        Dependency_3: download/uisource/background/colse.assetbundle
+        Dependency_4: download/uisource/background/grid.assetbundle
+    Info_2:
+      Name: download/uiprefab/uiwindows/taskitemview.assetbundle
+      Dependencies:
+        Dependency_0: download/uisource/background/grid.assetbundle
     Info_3:
-      Name: download/uisource/background/init.assetbundle
+      Name: download/uiprefab/uiwindows/testview.assetbundle
       Dependencies: {}
     Info_4:
-      Name: download/uisource/background/loading_bg.assetbundle
+      Name: download/uisource/atlas/fishsss.assetbundle
       Dependencies: {}
     Info_5:
-      Name: download/uisource/background/colse.assetbundle
+      Name: download/uisource/background/12.assetbundle
       Dependencies: {}
     Info_6:
-      Name: download/uisource/background/12.assetbundle
+      Name: download/uisource/background/bg.assetbundle
       Dependencies: {}
     Info_7:
       Name: download/uisource/background/bg_004.assetbundle
       Dependencies: {}
     Info_8:
-      Name: download/uisource/background/bg.assetbundle
+      Name: download/uisource/background/button.assetbundle
       Dependencies: {}
     Info_9:
-      Name: download/uisource/atlas/fishsss.assetbundle
+      Name: download/uisource/background/colse.assetbundle
       Dependencies: {}
     Info_10:
       Name: download/uisource/background/grid.assetbundle
       Dependencies: {}
     Info_11:
-      Name: download/uisource/background/logon_bg.assetbundle
+      Name: download/uisource/background/init.assetbundle
       Dependencies: {}
     Info_12:
-      Name: download/uisource/background/button.assetbundle
+      Name: download/uisource/background/loading_bg.assetbundle
       Dependencies: {}
     Info_13:
-      Name: download/uiprefab/uiwindows/taskitemview.assetbundle
-      Dependencies:
-        Dependency_0: download/uisource/background/grid.assetbundle
-    Info_14:
-      Name: download/uiprefab/uisceneview/uirootview.assetbundle
-      Dependencies:
-        Dependency_0: download/uisource/background/bg.assetbundle
-    Info_15:
-      Name: download/uiprefab/uiwindows/testview.assetbundle
+      Name: download/uisource/background/logon_bg.assetbundle
       Dependencies: {}
-    Info_16:
-      Name: download/uiprefab/uiwindows/messageview.assetbundle
-      Dependencies:
-        Dependency_0: download/uisource/background/colse.assetbundle
-        Dependency_1: download/uisource/background/bg_004.assetbundle
-        Dependency_2: download/uisource/background/bg.assetbundle
-        Dependency_3: download/uisource/background/grid.assetbundle
-        Dependency_4: download/uisource/background/button.assetbundle
-    Info_17:
+    Info_14:
       Name: download/xluacodetxt/core.lua.assetbundle
       Dependencies: {}
-    Info_18:
+    Info_15:
       Name: download/xluacodetxt/ctrlmanager.lua.assetbundle
       Dependencies: {}
-    Info_19:
+    Info_16:
       Name: download/xluacodetxt/gameinit.lua.assetbundle
       Dependencies: {}
-    Info_20:
+    Info_17:
       Name: download/xluacodetxt/main.lua.assetbundle
       Dependencies: {}
-    Info_21:
+    Info_18:
       Name: download/xluacodetxt/common/define.lua.assetbundle
       Dependencies: {}
-    Info_22:
+    Info_19:
       Name: download/xluacodetxt/data/dbmodelmgr.lua.assetbundle
       Dependencies: {}
-    Info_23:
+    Info_20:
       Name: download/xluacodetxt/data/messagedbmodelext.lua.assetbundle
       Dependencies: {}
-    Info_24:
+    Info_21:
       Name: download/xluacodetxt/data/create/messagedbmodel.lua.assetbundle
       Dependencies: {}
-    Info_25:
+    Info_22:
       Name: download/xluacodetxt/data/create/messageentity.lua.assetbundle
       Dependencies: {}
-    Info_26:
+    Info_23:
       Name: download/xluacodetxt/gamectrl/messagectrl.lua.assetbundle
       Dependencies: {}
-    Info_27:
+    Info_24:
       Name: download/xluacodetxt/gamectrl/uirootctrl.lua.assetbundle
       Dependencies: {}
-    Info_28:
+    Info_25:
       Name: download/xluacodetxt/gameview/messageview.lua.assetbundle
       Dependencies: {}
-    Info_29:
+    Info_26:
       Name: download/xluacodetxt/gameview/uirootview.lua.assetbundle
       Dependencies: {}
-    Info_30:
+    Info_27:
       Name: download/xluacodetxt/proto/message_searchtaskproto.lua.assetbundle
       Dependencies: {}
-    Info_31:
+    Info_28:
       Name: download/xluacodetxt/proto/message_searchtaskreyurnproto.lua.assetbundle
       Dependencies: {}
-    Info_32:
+    Info_29:
       Name: download/xluacodetxt/template/ctrltemplate.lua.assetbundle
       Dependencies: {}
-    Info_33:
+    Info_30:
       Name: download/xluacodetxt/template/viewtemplate.lua.assetbundle
+      Dependencies: {}
+    Info_31:
+      Name: download/scene/init.unity3d
+      Dependencies:
+        Dependency_0: download/uisource/background/init.assetbundle
+    Info_32:
+      Name: download/scene/item2.assetbundle
+      Dependencies: {}
+    Info_33:
+      Name: download/scene/loading.unity3d
+      Dependencies:
+        Dependency_0: download/uisource/background/loading_bg.assetbundle
+    Info_34:
+      Name: download/scene/logon.unity3d
+      Dependencies: {}
+    Info_35:
+      Name: download/audio/audiobgm/fight.assetbundle
+      Dependencies: {}
+    Info_36:
+      Name: download/audio/audiobgm/fight_boss.assetbundle
+      Dependencies: {}
+    Info_37:
+      Name: download/audio/audiobgm/home.assetbundle
+      Dependencies: {}
+    Info_38:
+      Name: download/audio/audiobgm/jieyangshan.assetbundle
+      Dependencies: {}
+    Info_39:
+      Name: download/audio/audiobgm/juejun.assetbundle
+      Dependencies: {}
+    Info_40:
+      Name: download/audio/audiobgm/login.assetbundle
+      Dependencies: {}
+    Info_41:
+      Name: download/audio/audiobgm/tianxiawushuang.assetbundle
+      Dependencies: {}
+    Info_42:
+      Name: download/audio/audiobgm/yijiaoqingyunyong.assetbundle
+      Dependencies: {}
+    Info_43:
+      Name: download/audio/audiobgm/youli_bgm.assetbundle
+      Dependencies: {}
+    Info_44:
+      Name: download/audio/audioeffect/1.assetbundle
+      Dependencies: {}
+    Info_45:
+      Name: download/audio/audioeffect/10.assetbundle
+      Dependencies: {}
+    Info_46:
+      Name: download/audio/audioeffect/11.assetbundle
+      Dependencies: {}
+    Info_47:
+      Name: download/audio/audioeffect/12.assetbundle
+      Dependencies: {}
+    Info_48:
+      Name: download/audio/audioeffect/13.assetbundle
+      Dependencies: {}
+    Info_49:
+      Name: download/audio/audioeffect/14.assetbundle
+      Dependencies: {}
+    Info_50:
+      Name: download/audio/audioeffect/15.assetbundle
+      Dependencies: {}
+    Info_51:
+      Name: download/audio/audioeffect/2.assetbundle
+      Dependencies: {}
+    Info_52:
+      Name: download/audio/audioeffect/3.assetbundle
+      Dependencies: {}
+    Info_53:
+      Name: download/audio/audioeffect/4.assetbundle
+      Dependencies: {}
+    Info_54:
+      Name: download/audio/audioeffect/5.assetbundle
+      Dependencies: {}
+    Info_55:
+      Name: download/audio/audioeffect/6.assetbundle
+      Dependencies: {}
+    Info_56:
+      Name: download/audio/audioeffect/7.assetbundle
+      Dependencies: {}
+    Info_57:
+      Name: download/audio/audioeffect/8.assetbundle
+      Dependencies: {}
+    Info_58:
+      Name: download/audio/audioeffect/9.assetbundle
+      Dependencies: {}
+    Info_59:
+      Name: download/audio/audioeffect/fight_begin.assetbundle
+      Dependencies: {}
+    Info_60:
+      Name: download/audio/audioeffect/fight_fail.assetbundle
+      Dependencies: {}
+    Info_61:
+      Name: download/audio/audioeffect/fight_win.assetbundle
+      Dependencies: {}
+    Info_62:
+      Name: download/audio/audioeffect/lingqu.assetbundle
       Dependencies: {}

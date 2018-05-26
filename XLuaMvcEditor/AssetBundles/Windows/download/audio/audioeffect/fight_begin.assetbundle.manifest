@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 1344854273
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a2c99fbae3a7d93411e5b09606306d16
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Download/Audio/AudioEffect/fight_begin.mp3
+Dependencies: []

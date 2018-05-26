@@ -113,17 +113,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
-    <Compile Include="Assets\SceneTest\Test.cs" />
+    <Compile Include="Assets\SceneTest\CommonTest\Test.cs" />
+    <Compile Include="Assets\SceneTest\DragList\DragListTest.cs" />
+    <Compile Include="Assets\SceneTest\LanguageTest\LanguageTest.cs" />
     <Compile Include="Assets\Script\AppConst.cs" />
+    <Compile Include="Assets\Script\Common\AtlasManager.cs" />
     <Compile Include="Assets\Script\Common\AudioManager.cs" />
     <Compile Include="Assets\Script\Common\DelegateDefine.cs" />
+    <Compile Include="Assets\Script\Common\DragListManager.cs" />
     <Compile Include="Assets\Script\Common\EnumDefine.cs" />
     <Compile Include="Assets\Script\Common\EventTriggerListener.cs" />
     <Compile Include="Assets\Script\Common\GlobalInit.cs" />
     <Compile Include="Assets\Script\Common\LocalFileMgr.cs" />
+    <Compile Include="Assets\Script\Common\Pool\ObjectPool.cs" />
+    <Compile Include="Assets\Script\Common\Pool\PoolItem.cs" />
+    <Compile Include="Assets\Script\Common\Pool\PoolManager.cs" />
     <Compile Include="Assets\Script\Common\SceneMgr.cs" />
     <Compile Include="Assets\Script\Common\Singleton\Singleton.cs" />
     <Compile Include="Assets\Script\Common\Singleton\SingletonMono.cs" />
+    <Compile Include="Assets\Script\Common\Timer\FrameTimerManager.cs" />
+    <Compile Include="Assets\Script\Common\Timer\TimeFrameItem.cs" />
+    <Compile Include="Assets\Script\Common\XMLManager.cs" />
     <Compile Include="Assets\Script\Core\AssetBundle\AssetBundleLoader.cs" />
     <Compile Include="Assets\Script\Core\AssetBundle\AssetBundleLoaderAsync.cs" />
     <Compile Include="Assets\Script\Core\AssetBundle\AssetBundleMgr.cs" />
@@ -167,6 +177,7 @@
     <Compile Include="Assets\Script\Utils\GameObjectUtil.cs" />
     <Compile Include="Assets\Script\Utils\GameUtil.cs" />
     <Compile Include="Assets\Script\Utils\IOUtil.cs" />
+    <Compile Include="Assets\Script\Utils\LangUtil.cs" />
     <Compile Include="Assets\Script\Utils\OperateAlert\OperateAlert.cs" />
     <Compile Include="Assets\Script\Utils\OperateAlert\OperateUtil.cs" />
     <Compile Include="Assets\Script\Utils\SecurityUtil.cs" />
@@ -290,6 +301,10 @@
     <None Include="Assets\Demigiant\DemiLib\Editor\DemiEditor.XML" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\Resources\Config\ChannelConfig.xml" />
+    <None Include="Assets\Resources\Xml\Item2.xml" />
+    <None Include="Assets\Resources\Xml\Item3.xml" />
+    <None Include="Assets\Resources\Xml\Item4.xml" />
+    <None Include="Assets\Resources\Xml\Test.xml" />
     <None Include="Assets\XLua\CHANGELOG.txt" />
     <None Include="Assets\XLua\Gen\link.xml" />
     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />

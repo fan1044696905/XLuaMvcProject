@@ -7,7 +7,7 @@ using UnityEngine;
 /// 初始化场景管理
 /// </summary>
 public class InitSceneCtrl : MonoBehaviour {
-
+    
     void Start()
     {
 #if DISABLE_ASSETBUNDLE
@@ -36,4 +36,5 @@ public class InitSceneCtrl : MonoBehaviour {
         yield return new WaitForSeconds(0.3f);
         SceneMgr.Instance.LoadScene(AppConst.LogOn);
     }
+    
 }

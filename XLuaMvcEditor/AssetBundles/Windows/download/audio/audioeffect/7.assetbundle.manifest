@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 4142005751
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 709432c10bdce55d6be9b9d516662ac9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c516f2a3b2b6b67ef759f6410a790acd
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Download/Audio/AudioEffect/7.mp3
+Dependencies: []

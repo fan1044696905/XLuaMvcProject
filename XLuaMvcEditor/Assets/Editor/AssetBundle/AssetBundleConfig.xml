@@ -16,6 +16,10 @@
     <Item Name="Scene" Tag="Scene" IsFolder="True" IsFirstData="True">
       <Path Value="Download\Scene"/>
     </Item>
+    
+    <Item Name="Audio" Tag="Audio" IsFolder="True" IsFirstData="True">
+      <Path Value="Download\Audio"/>
+    </Item>
 
   </AssetBundle>
 </Root>

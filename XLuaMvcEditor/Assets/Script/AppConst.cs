@@ -16,7 +16,7 @@ public class AppConst  {
 #else
     public const bool DebugMode = false;// 是否开启调试模式
 #endif
-    public const string ServerUrl = "http://192.168.1.102:8080/Web/";// 服务器地址(DownloadMgr)
+    public const string ServerUrl = "http://192.168.1.105:8080/Web/";// 服务器地址(DownloadMgr)
     public const int DownLoadRountineNum = 5;// 下载器的数量(DownloadMgr)
     public const int DownLoadTimeOut = 5;// 超时时间(DownloadMgr)
     public const string VersionFileName = "VersionFile.txt";// 版本文件名称(DownloadMgr)

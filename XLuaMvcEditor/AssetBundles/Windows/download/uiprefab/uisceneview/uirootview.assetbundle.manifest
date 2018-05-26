@@ -6,7 +6,7 @@ Hashes:
     Hash: 780a6dfc6184ad39f5765ff12fabe161
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c3ec0d3d706e780e70c272a5f872f7ab
+    Hash: 576450dc0983fc3d53727f39766c9264
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -24,11 +24,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
-  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
   Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -44,4 +44,4 @@ ClassTypes:
 Assets:
 - Assets/Download/UIPrefab/UISceneView/UIRootView.prefab
 Dependencies:
-- D:/Documents/XLuaMvcProject/XLuaMvcEdiror/Assets/../AssetBundles/Windows/download/uisource/background/bg.assetbundle
+- D:/Documents/XLuaMvcProject/XLuaMvcEditor/Assets/../AssetBundles/Windows/download/uisource/background/bg.assetbundle

@@ -94,14 +94,37 @@ public static class MonoBehaviourExtended
 
     #region ------ Set Image Sprite ------
 
-    public static void SetAtlasSprite(this Image image,string atlasPath,string name)
+    /// <summary>
+    /// 设置图片
+    /// </summary>
+    /// <param name="image"></param>
+    /// <param name="atlasName">图集名字</param>
+    /// <param name="spriteName">小图片名</param>
+    public static void SetAtlasSprite(this Image image,string atlasName,string spriteName)
     {
-        Sprite sp = AssetBundleMgr.Instance.LoadAtlasSprite(atlasPath, name);
+        Sprite sp = AtlasManager.Instance.GetAtlasSprite(atlasName, spriteName);
         image.sprite = sp;
     }
+    /// <summary>
+    /// 设置背景图片(在目录UISource/BackGround目录下)
+    /// </summary>
+    /// <param name="image"></param>
+    /// <param name="bgName">背景图片名</param>
     public static void SetBgSprite(this Image image, string bgName)
     {
-        Sprite sp = AssetBundleMgr.Instance.LoadBgSprite(bgName);
+        Sprite sp = AssetBundleMgr.Instance.LoadBgSprite(string.Format(AppConst.UIBgPath, bgName), bgName);
+        image.sprite = sp;
+    }
+
+    /// <summary>
+    /// 设置背景图片(在目录UISource/BackGround/XXX目录下)
+    /// </summary>
+    /// <param name="image"></param>
+    /// <param name="bgPath">背景图片路径</param>
+    /// <param name="bgName">背景图片名</param>
+    public static void SetBgSprite(this Image image, string bgPath,string bgName)
+    {
+        Sprite sp = AssetBundleMgr.Instance.LoadBgSprite(string.Format(AppConst.UIBgPath, bgPath), bgName);
         image.sprite = sp;
     }
 

@@ -85,7 +85,6 @@ public class AssetBundleDownloadRoutine : MonoBehaviour
     {
         IsStartDownload = true;
         NeedDownloadCount = m_List.Count;
-
     }
 
     void Update()
@@ -103,12 +102,11 @@ public class AssetBundleDownloadRoutine : MonoBehaviour
         m_CurrDownLoadData = m_List[0];
         //资源下载路径
         string dataUrl = DownloadMgr.Instance.DownLoadUrl + m_CurrDownLoadData.FullName;
-        int lastIndex = m_CurrDownLoadData.FullName.LastIndexOf('\\');
+        int lastIndex = m_CurrDownLoadData.FullName.LastIndexOf('\\');//大于-1 说明路径包含了文件夹
         if (lastIndex > -1)
         {
-            //短路径 用于创建文件夹
+            //文件夹短路径 用于创建文件夹
             string path = m_CurrDownLoadData.FullName.Substring(0, lastIndex);
-
             //得到本地路径
             string localFilePath = DownloadMgr.Instance.LocalFilePath + path;
 
@@ -117,7 +115,6 @@ public class AssetBundleDownloadRoutine : MonoBehaviour
                 Directory.CreateDirectory(localFilePath);
             }
         }
-
         WWW www = new WWW(dataUrl);
         float timeOut = Time.time;
         float progress = www.progress;
@@ -155,10 +152,10 @@ public class AssetBundleDownloadRoutine : MonoBehaviour
 
         m_CurrDownloadSiz = 0;
         m_DownloadSize += m_CurrDownLoadData.Size;
-
+        
         //写入本地文件
         DownloadMgr.Instance.ModifyLocalData(m_CurrDownLoadData);
-
+        
         m_List.RemoveAt(0);
         CompleteCoun++;
         if (m_List.Count == 0)

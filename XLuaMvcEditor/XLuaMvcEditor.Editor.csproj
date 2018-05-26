@@ -203,6 +203,7 @@
     <None Include="Assets\Demigiant\DemiLib\DemiLib.xml" />
     <None Include="Assets\Demigiant\DemiLib\Editor\DemiEditor.XML" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
+    <None Include="Assets\Download\Scene\Item2.xml" />
     <None Include="Assets\Editor\AssetBundle\AssetBundleConfig.xml" />
     <None Include="Assets\Resources\Config\ChannelConfig.xml" />
     <None Include="Assets\XLua\CHANGELOG.txt" />

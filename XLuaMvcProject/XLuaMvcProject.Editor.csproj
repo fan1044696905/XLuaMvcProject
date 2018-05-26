@@ -201,6 +201,10 @@
     <None Include="Assets\Demigiant\DemiLib\Editor\DemiEditor.XML" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\Resources\Config\ChannelConfig.xml" />
+    <None Include="Assets\Resources\Xml\Item2.xml" />
+    <None Include="Assets\Resources\Xml\Item3.xml" />
+    <None Include="Assets\Resources\Xml\Item4.xml" />
+    <None Include="Assets\Resources\Xml\Test.xml" />
     <None Include="Assets\XLua\CHANGELOG.txt" />
     <None Include="Assets\XLua\Gen\link.xml" />
     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />

@@ -1,13 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public enum E_AudioType
-{
-    Bgm,
-    Effect
-}
+
 public class AudioManager : Singleton<AudioManager> {
 
 
@@ -24,10 +19,6 @@ public class AudioManager : Singleton<AudioManager> {
             {
                 AudioSource audioSource = go.AddComponent<AudioSource>();
                 AudioItem audioItem = new AudioItem(audioSource);
-                if (audioList.Count==0)
-                    audioItem.AudioType = E_AudioType.Bgm;
-                else
-                    audioItem.AudioType = E_AudioType.Effect;
                 audioList.Add(audioItem);
             }
         }
@@ -50,14 +41,39 @@ public class AudioManager : Singleton<AudioManager> {
             return;
         }
     }
+    public void StopBgm()
+    {
+        audioList[0].Stop();
+    }
+    public void StopEffect(string effectName)
+    {
+        for (int i = 1; i < audioList.Count; i++)
+        {
+            if (audioList[i].audioClipName.Equals(effectName))
+            {
+                audioList[i].Stop();
+                break;
+            }
+        }
+    }
+    public void StopAllEffect()
+    {
+        for (int i = 1; i < audioList.Count; i++)
+        {
+            audioList[i].Stop();
+        }
+    }
+    public void PauseBgm()
+    {
+        audioList[0].Pause();
+    }
 }
 
 public class AudioItem
 {
     private AudioSource audioSource;
-    public E_AudioType AudioType;
     private float duration = 0.2f;
-    
+    public string audioClipName = "";
     public bool IsPlay
     {
         get
@@ -72,8 +88,9 @@ public class AudioItem
     }
     public void PlayBgmAudio(string bgmName, float volume = 0.8f, bool isLoop = true)
     {
-        AudioClip clip = Resources.Load("Audio/AudioBgm/" + bgmName) as AudioClip;
-        audioSource.clip = clip;
+        audioClipName = bgmName;
+        AudioClip ac = AssetBundleMgr.Instance.LoadAudio(string.Format(AppConst.AudioBgmPath, bgmName), bgmName);
+        audioSource.clip = ac;
         audioSource.volume = volume;
         audioSource.loop = isLoop;
         if (audioSource.isPlaying)
@@ -84,11 +101,21 @@ public class AudioItem
     }
     public void PlayEffectAudio(string effectName, float volume = 0.8f, bool isLoop = false)
     {
-         AudioClip clip = Resources.Load("Audio/AudioEffect/" + effectName) as AudioClip;
-        audioSource.clip = clip;
-        audioSource.volume = volume;
+        audioClipName = effectName;
+        AudioClip ac = AssetBundleMgr.Instance.LoadAudio(string.Format(AppConst.AudioEffectPath,effectName), effectName);
         audioSource.loop = isLoop;
+        audioSource.clip = ac;
+        audioSource.volume = volume;
         audioSource.Play();
-        //audioSource.PlayOneShot(clip, volume);
+    }
+
+    public void Stop()
+    {
+        audioSource.Stop();
+    }
+
+    public void Pause()
+    {
+        audioSource.Pause();
     }
 }

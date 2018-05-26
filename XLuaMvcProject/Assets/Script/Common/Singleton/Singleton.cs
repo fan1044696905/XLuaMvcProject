@@ -23,8 +23,15 @@ public class Singleton<T> where T :class,new()
         }
     }
 
+    protected Singleton()
+    {
+        Init();
+    }
+
     public virtual void Dispose()
     {
         
     }
+
+    public virtual void Init() { }
 }

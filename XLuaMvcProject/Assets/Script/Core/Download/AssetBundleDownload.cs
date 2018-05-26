@@ -32,11 +32,39 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
     private bool m_IsDownloadOver = false;
 
 
+    /// <summary>
+    /// 总数量
+    /// </summary>
+    public int TotalCount
+    {
+        get;
+        private set;
+    }
+    /// <summary>
+    /// 总大小
+    /// </summary>
+    public int TotalSize
+    {
+        get;
+        private set;
+    }
+
+    public int DownloadSize
+    {
+        get
+        {
+            int downloadSize = 0;
+            for (int i = 0; i < m_Routine.Length; i++)
+            {
+                downloadSize += m_Routine[i].DownloadSize;
+            }
+            return downloadSize;
+        }
+    }
 
     protected override void OnStart()
     {
         base.OnStart();
-
         //真正的运行
         StartCoroutine(DownLoadVersion(m_VersionUrl));
     }
@@ -54,7 +82,6 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
     protected override void OnUpdate()
     {
         base.OnUpdate();
-
         //如果需要下载的数量大于0 并且还没有下载完成
         if (TotalCount > 0 && !m_IsDownloadOver)
         {
@@ -78,8 +105,7 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
             {
                 m_NeedTime = (TotalSize - totalCompleteSize) / m_Speed;
             }
-
-            string str = string.Format("正在下载{0}/{1}", totalCompleteCount, TotalCount);
+            string str = string.Format("正在下载{0}/{1}     {2}Kb/{3}Kb", totalCompleteCount, TotalCount, DownloadSize, TotalSize);
             string strProgress = string.Format("下载进度={0}", totalCompleteSize / (float)TotalSize);
 
             UISceneInitView.Instance.SetProgress(str, totalCompleteCount / (float)TotalCount);
@@ -127,7 +153,6 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
     private IEnumerator DownLoadVersion(string url)
     {
         WWW www = new WWW(url);
-
         float timeOut = Time.time;
         float progress = www.progress;
 
@@ -164,14 +189,6 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
 
 
     /// <summary>
-    /// 总大小
-    /// </summary>
-    public int TotalSize
-    {
-        get;
-        private set;
-    }
-    /// <summary>
     /// 当前已经下载的文件的总大小
     /// </summary>
     /// <returns></returns>
@@ -190,14 +207,6 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
 
 
 
-    /// <summary>
-    /// 总数量
-    /// </summary>
-    public int TotalCount
-    {
-        get;
-        private set;
-    }
     /// <summary>
     /// 当前已经下载的文件的总数量
     /// </summary>
@@ -248,7 +257,6 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
             TotalSize += downloadList[i].Size;
             TotalCount++;
         }
-
         //让下载器开始下载
         for (int i = 0; i < m_Routine.Length; i++)
         {

@@ -440,8 +440,10 @@ public class AssetBundleWindow : EditorWindow
             {
                 import.SetAssetBundleNameAndVariant(null, null);
             }
-            import.SaveAndReimport();            
+            import.SaveAndReimport();
         }
+        else
+            return;
 
         Debug.Log("保存设置成功");
     }
@@ -501,7 +503,7 @@ public class AssetBundleWindow : EditorWindow
 
 
     /// <summary>
-    /// 生产版本文件
+    /// 生成版本文件
     /// </summary>
     private void OnCreateVersionTextCallBack()
     {
@@ -529,7 +531,6 @@ public class AssetBundleWindow : EditorWindow
 
             //相对路径
             string name = fullName.Substring(fullName.IndexOf(arrBuilTarget[buildTargetIndex]) + arrBuilTarget[buildTargetIndex].Length + 1);
-
             //获取文件的md5
             string md5 = EncryptUtil.GetFileMD5(fullName);
             if (md5 == null) continue;
