@@ -41,8 +41,8 @@ public class AppConst  {
     public const string AudioBgmPath = "Download/Audio/AudioBgm/{0}.assetbundle";//背景音乐路径
     public const string AudioEffectPath = "Download/Audio/AudioEffect/{0}.assetbundle";//U音效路径
     public const string LanguageConfigerPath = ServerUrl + "Config/Language.json";//语言配置路径(Chinese  English...)
-    public const string XmlPath = ServerUrl + "Config/Xml/{0}.xml";//Xml配置路径
-    public const string JsonPath = ServerUrl + "Config/Json/{0}.json";//Json配置路径
+    public const string XmlPath = ServerUrl + "Config/Xml/{0}";//Xml配置路径
+    public const string JsonPath = ServerUrl + "Config/Json/{0}";//Json配置路径
     public const string XmlTxtPath = ServerUrl + "Config/Xml.txt";//所有Xml配置名所在的txt文件
     public const string JsonTxtPath = ServerUrl + "Config/json.txt";//所有Xml配置名所在的txt文件
 }

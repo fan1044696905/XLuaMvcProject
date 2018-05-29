@@ -20,6 +20,10 @@
     <Item Name="Audio" Tag="Audio" IsFolder="True" IsFirstData="True">
       <Path Value="Download\Audio"/>
     </Item>
+    
+   <Item Name="Config" Tag="Config" IsFolder="True" IsFirstData="True">
+      <Path Value="Download\Config"/>
+    </Item>
 
   </AssetBundle>
 </Root>

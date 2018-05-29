@@ -79,9 +79,10 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
     //下载速度
     private float m_Speed = 0f;
 
-    protected override void OnUpdate()
+    protected  void OnUpdate1()
     {
         base.OnUpdate();
+        Debug.Log(TotalCount + "   "+ m_IsDownloadOver + "  XmlManager TotalCompleteCount = "+XMLManager.Instance.TotalCompleteCount);
         //如果需要下载的数量大于0 并且还没有下载完成
         if (TotalCount > 0 && !m_IsDownloadOver)
         {
@@ -113,9 +114,58 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
             if (m_NeedTime > 0)
             {
                 string strTime = string.Format("剩余时间={0}秒", m_NeedTime);
-                //AppDebug.Log(strTime);
+                //Debuger.Log(strTime);
             }
           
+            if (totalCompleteCount == TotalCount)
+            {
+                m_IsDownloadOver = true;
+                UISceneInitView.Instance.SetProgress("资源更新完毕", 1);
+                if (DownloadMgr.Instance.OnInitComplete != null)
+                {
+                    //DownloadMgr.Instance.OnInitComplete();
+                }
+
+            }
+        }
+    }
+    protected override void OnUpdate()
+    {
+        base.OnUpdate();
+        //如果需要下载的数量大于0 并且还没有下载完成
+        if (TotalCount > 0 && !m_IsDownloadOver)
+        {
+            //当前下载的数量
+            int totalCompleteCount = CurrCompleteTotalCount();
+            totalCompleteCount = totalCompleteCount == 0 ? 1 : totalCompleteCount;
+
+            //当前下载的大小
+            int totalCompleteSize = CurrCompleteTotalSize();
+
+            //已经下载的时间
+            m_AlreadyTime += Time.deltaTime;
+            if (m_AlreadyTime > m_Time && m_Speed == 0)
+            {
+                //速度
+                m_Speed = totalCompleteSize / m_Time;
+            }
+
+            //计算下载剩余时间 = （总大小 - 已经下载的大小） / 速度
+            if (m_Speed > 0)
+            {
+                m_NeedTime = (TotalSize - totalCompleteSize) / m_Speed;
+            }
+            string str = string.Format("正在下载资源{0}/{1}     {2}Kb/{3}Kb", totalCompleteCount, TotalCount, DownloadSize, TotalSize);
+            string strProgress = string.Format("下载进度={0}", totalCompleteSize / (float)TotalSize);
+
+            UISceneInitView.Instance.SetProgress(str, totalCompleteCount / (float)TotalCount);
+
+            if (m_NeedTime > 0)
+            {
+                string strTime = string.Format("剩余时间={0}秒", m_NeedTime);
+                //Debuger.Log(strTime);
+            }
+
             if (totalCompleteCount == TotalCount)
             {
                 m_IsDownloadOver = true;
@@ -128,7 +178,6 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
             }
         }
     }
-
 
 
 
@@ -263,8 +312,9 @@ public class AssetBundleDownload : SingletonMono<AssetBundleDownload>
             if (m_Routine[i] == null) continue;
             m_Routine[i].StartDownload();
         }
-
-
+        //下载xml文件
+        //XMLManager.Instance.StartDownload();
+        
     }
 
 

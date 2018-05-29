@@ -28,7 +28,7 @@ public class AssetBundleWindow : EditorWindow
     /// <summary>
     /// 资源标签
     /// </summary>
-    private string[] arrTag = { "All", "Scene", "Role", "Effect", "Audio", "UI","XLuaCode","Prefab", "None" };
+    private string[] arrTag = { "All", "Scene", "Role", "Effect", "Audio", "UI","XLuaCode","Prefab","Config", "None" };
 
     /// <summary>
     /// 标记的索引
@@ -271,8 +271,14 @@ public class AssetBundleWindow : EditorWindow
                     m_Dic[entity.Key] = entity.Tag.Equals("Prefab", StringComparison.CurrentCultureIgnoreCase);
                 }
                 break;
+            case 8:  //预制体 Prefab
+                foreach (AssetBundleEntity entity in m_Lst)
+                {
+                    m_Dic[entity.Key] = entity.Tag.Equals("Config", StringComparison.CurrentCultureIgnoreCase);
+                }
+                break;
 
-            case 8:  //空 None
+            case 9:  //空 None
                 foreach (AssetBundleEntity entity in m_Lst)
                 {
                     m_Dic[entity.Key] = false;

@@ -227,6 +227,7 @@ public class DownloadMgr : Singleton<DownloadMgr>
     /// <param name="obj"></param>
     private void OnInitVersionCallBack(List<DownloadDataEntity> serverDownloadData)
     {
+        //XMLManager.Instance.StartDownload();
         //得到服务端数据列表
         m_ServerDataList = serverDownloadData;
         
@@ -293,7 +294,6 @@ public class DownloadMgr : Singleton<DownloadMgr>
         }
         //拿到下载列表 m_NeedDownLoadDataList 进行下载 
         AssetBundleDownload.Instance.DownloadFiles(m_NeedDownLoadDataList);
-
 
     }
 

@@ -146,8 +146,20 @@
     <Reference Include="DOTweenProEditor">
       <HintPath>Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Excel">
+      <HintPath>Assets/Plugins/Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="LitJson">
       <HintPath>Assets/Plugins/LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>Assets/Plugins/System.Data.dll</HintPath>
     </Reference>
     <Reference Include="Debuger">
       <HintPath>Assets/Plugins/Assembly/Debuger.dll</HintPath>
@@ -172,17 +184,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="XLuaMvcEditor.csproj">
-      <Project>{160FB200-4C5C-2D05-82FC-2CDBCB1C086E}</Project>
-      <Name>XLuaMvcEditor</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <Compile Include="Assets\Editor\AssetBundle\AssetBundleDAL.cs" />
     <Compile Include="Assets\Editor\AssetBundle\AssetBundleEntity.cs" />
     <Compile Include="Assets\Editor\AssetBundleWindow.cs" />
     <Compile Include="Assets\Editor\AtlasEditor.cs" />
+    <Compile Include="Assets\Editor\ExcelTools.cs" />
+    <Compile Include="Assets\Editor\ExcelUtility.cs" />
     <Compile Include="Assets\Editor\Menu.cs" />
     <Compile Include="Assets\Editor\SettingsWindow.cs" />
     <Compile Include="Assets\XLua\Src\Editor\Generator.cs" />
@@ -203,7 +211,8 @@
     <None Include="Assets\Demigiant\DemiLib\DemiLib.xml" />
     <None Include="Assets\Demigiant\DemiLib\Editor\DemiEditor.XML" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
-    <None Include="Assets\Download\Scene\Item2.xml" />
+    <None Include="Assets\Download\Config\Xml\Item3.xml" />
+    <None Include="Assets\Download\Config\Xml\Language.xml" />
     <None Include="Assets\Editor\AssetBundle\AssetBundleConfig.xml" />
     <None Include="Assets\Resources\Config\ChannelConfig.xml" />
     <None Include="Assets\XLua\CHANGELOG.txt" />

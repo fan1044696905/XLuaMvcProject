@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2529650790
+CRC: 1946730864
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -107,96 +107,102 @@ AssetBundleManifest:
       Dependencies:
         Dependency_0: download/uisource/background/init.assetbundle
     Info_32:
-      Name: download/scene/item2.assetbundle
-      Dependencies: {}
-    Info_33:
       Name: download/scene/loading.unity3d
       Dependencies:
         Dependency_0: download/uisource/background/loading_bg.assetbundle
-    Info_34:
+    Info_33:
       Name: download/scene/logon.unity3d
       Dependencies: {}
-    Info_35:
+    Info_34:
       Name: download/audio/audiobgm/fight.assetbundle
       Dependencies: {}
-    Info_36:
+    Info_35:
       Name: download/audio/audiobgm/fight_boss.assetbundle
       Dependencies: {}
-    Info_37:
+    Info_36:
       Name: download/audio/audiobgm/home.assetbundle
       Dependencies: {}
-    Info_38:
+    Info_37:
       Name: download/audio/audiobgm/jieyangshan.assetbundle
       Dependencies: {}
-    Info_39:
+    Info_38:
       Name: download/audio/audiobgm/juejun.assetbundle
       Dependencies: {}
-    Info_40:
+    Info_39:
       Name: download/audio/audiobgm/login.assetbundle
       Dependencies: {}
-    Info_41:
+    Info_40:
       Name: download/audio/audiobgm/tianxiawushuang.assetbundle
       Dependencies: {}
-    Info_42:
+    Info_41:
       Name: download/audio/audiobgm/yijiaoqingyunyong.assetbundle
       Dependencies: {}
-    Info_43:
+    Info_42:
       Name: download/audio/audiobgm/youli_bgm.assetbundle
       Dependencies: {}
-    Info_44:
+    Info_43:
       Name: download/audio/audioeffect/1.assetbundle
       Dependencies: {}
-    Info_45:
+    Info_44:
       Name: download/audio/audioeffect/10.assetbundle
       Dependencies: {}
-    Info_46:
+    Info_45:
       Name: download/audio/audioeffect/11.assetbundle
       Dependencies: {}
-    Info_47:
+    Info_46:
       Name: download/audio/audioeffect/12.assetbundle
       Dependencies: {}
-    Info_48:
+    Info_47:
       Name: download/audio/audioeffect/13.assetbundle
       Dependencies: {}
-    Info_49:
+    Info_48:
       Name: download/audio/audioeffect/14.assetbundle
       Dependencies: {}
-    Info_50:
+    Info_49:
       Name: download/audio/audioeffect/15.assetbundle
       Dependencies: {}
-    Info_51:
+    Info_50:
       Name: download/audio/audioeffect/2.assetbundle
       Dependencies: {}
-    Info_52:
+    Info_51:
       Name: download/audio/audioeffect/3.assetbundle
       Dependencies: {}
-    Info_53:
+    Info_52:
       Name: download/audio/audioeffect/4.assetbundle
       Dependencies: {}
-    Info_54:
+    Info_53:
       Name: download/audio/audioeffect/5.assetbundle
       Dependencies: {}
-    Info_55:
+    Info_54:
       Name: download/audio/audioeffect/6.assetbundle
       Dependencies: {}
-    Info_56:
+    Info_55:
       Name: download/audio/audioeffect/7.assetbundle
       Dependencies: {}
-    Info_57:
+    Info_56:
       Name: download/audio/audioeffect/8.assetbundle
       Dependencies: {}
-    Info_58:
+    Info_57:
       Name: download/audio/audioeffect/9.assetbundle
       Dependencies: {}
-    Info_59:
+    Info_58:
       Name: download/audio/audioeffect/fight_begin.assetbundle
       Dependencies: {}
-    Info_60:
+    Info_59:
       Name: download/audio/audioeffect/fight_fail.assetbundle
       Dependencies: {}
-    Info_61:
+    Info_60:
       Name: download/audio/audioeffect/fight_win.assetbundle
       Dependencies: {}
-    Info_62:
+    Info_61:
       Name: download/audio/audioeffect/lingqu.assetbundle
+      Dependencies: {}
+    Info_62:
+      Name: download/config/xml/item3.assetbundle
+      Dependencies: {}
+    Info_63:
+      Name: download/config/xml/language.assetbundle
+      Dependencies: {}
+    Info_64:
+      Name: download/config/json/boss.assetbundle
       Dependencies: {}

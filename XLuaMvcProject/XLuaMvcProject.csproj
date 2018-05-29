@@ -119,11 +119,13 @@
     <Compile Include="Assets\Script\AppConst.cs" />
     <Compile Include="Assets\Script\Common\AtlasManager.cs" />
     <Compile Include="Assets\Script\Common\AudioManager.cs" />
+    <Compile Include="Assets\Script\Common\ConfigManager.cs" />
     <Compile Include="Assets\Script\Common\DelegateDefine.cs" />
     <Compile Include="Assets\Script\Common\DragListManager.cs" />
     <Compile Include="Assets\Script\Common\EnumDefine.cs" />
     <Compile Include="Assets\Script\Common\EventTriggerListener.cs" />
     <Compile Include="Assets\Script\Common\GlobalInit.cs" />
+    <Compile Include="Assets\Script\Common\JsonManager.cs" />
     <Compile Include="Assets\Script\Common\LocalFileMgr.cs" />
     <Compile Include="Assets\Script\Common\Pool\ObjectPool.cs" />
     <Compile Include="Assets\Script\Common\Pool\PoolItem.cs" />

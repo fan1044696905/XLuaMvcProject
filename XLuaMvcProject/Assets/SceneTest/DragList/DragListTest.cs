@@ -19,23 +19,10 @@ public class DragListTest : MonoBehaviour {
         //StartCoroutine(XMLManager.Instance.LoadXml("Test"));
         //XMLManager.Instance.GetString("Test", 1, "des");
         //StartCoroutine(LoadXML());
-        StartCoroutine(XMLManager.Instance.ReadXmlTxt());
+        //StartCoroutine(XMLManager.Instance.ReadXmlTxt());
+        //StartCoroutine(XMLManager.Instance.SplitXmlTxt());
     }
-
-    IEnumerator LoadXML()
-    {
-        StartCoroutine(XMLManager.Instance.LoadXml("Item3"));
-        StartCoroutine(XMLManager.Instance.LoadXml("Language"));
-        yield return new WaitForSeconds(1);
-        //Debuger.Log(XMLManager.Instance.GetString("Item3", 1, "des"));
-        //Debuger.Log(XMLManager.Instance.GetString("Item3", 2, "des"));
-        //Debuger.Log(XMLManager.Instance.GetString("Item3", 3, "des"));
-        //Debuger.Log(XMLManager.Instance.GetString("Item3", 5, "des"));
-        Debuger.Log(XMLManager.Instance.GetString("Item3", 101, "des"));
-        Debuger.Log(XMLManager.Instance.GetString("Item3", 102, "des"));
-        Debuger.Log( XMLManager.Instance.GetString("Language", 2, "english"));
-        //Debuger.Log(XMLManager.Instance.GetString("Item3", 4, "des"));
-    }
+    
 	
 	
 }

@@ -230,7 +230,7 @@ public class AssetBundleMgr : Singleton<AssetBundleMgr>
                     }
                     else
                     {
-                        Debuger.LogError("The path is error:"+path);
+                        Debuger.LogError("The fullPath is error:"+ fullPath);
                     }
                 }
                 else

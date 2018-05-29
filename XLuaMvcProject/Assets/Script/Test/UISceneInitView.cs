@@ -18,11 +18,12 @@ public class UISceneInitView : MonoBehaviour {
 
     public static UISceneInitView Instance;
 
-
+    private Text valueText;
     void Awake()
     {
         Instance = this;
         bg = transform.GetComponent<Image>("Image");
+        valueText = transform.GetComponent<Text>("Slider_Load/ValueText");
 #if DISABLE_ASSETBUNDLE
         
 #else
@@ -40,5 +41,10 @@ public class UISceneInitView : MonoBehaviour {
     {
         txt_Load.text = text;
         slider_Load.value = value;
+        valueText.text = (value * 100).ToString("0.00") + "%";
+        if (value==1)
+        {
+            valueText.text = "100%";
+        }
     }
 }
