@@ -152,9 +152,6 @@
     <Reference Include="Debuger">
       <HintPath>Assets/Plugins/Assembly/Debuger.dll</HintPath>
     </Reference>
-    <Reference Include="CustomSpace">
-      <HintPath>Assets/Script/Plugins/Debug/CustomSpace.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>Assets/XLua/Src/Editor/Mono.Cecil.dll</HintPath>
     </Reference>

@@ -20,6 +20,8 @@ public class LuaManager : SingletonMono<LuaManager>
 
         LuaEnv = new LuaEnv();
         LuaEnv.AddLoader(MyLoader);
+
+        //TODO 此处尚需优化 现在是把lua代码又保存到了本地
 #if DEBUG_MODEL==false && DISABLE_ASSETBUNDLE==false
         List<string> tempList = LuaHelper.Instance.luaList;
         tempList.Clear();

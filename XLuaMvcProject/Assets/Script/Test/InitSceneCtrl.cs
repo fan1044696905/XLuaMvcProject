@@ -18,10 +18,10 @@ public class InitSceneCtrl : MonoBehaviour {
 
         //TODO 读取服务器配置
 
-        ConfigManager.Instance.StartDownload();
+        //ConfigManager.Instance.StartDownload();
 
         //启动协程
-        //DownloadMgr.Instance.InitStreamingAssets(OnInitComplete);
+        DownloadMgr.Instance.InitStreamingAssets(OnInitComplete);
 #endif
     }
 

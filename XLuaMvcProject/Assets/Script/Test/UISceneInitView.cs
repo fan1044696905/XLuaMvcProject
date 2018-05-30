@@ -24,6 +24,7 @@ public class UISceneInitView : MonoBehaviour {
         Instance = this;
         bg = transform.GetComponent<Image>("Image");
         valueText = transform.GetComponent<Text>("Slider_Load/ValueText");
+        gameObject.GetOrAddComponent(typeof(UnityEngine.UI.Button),"Image");
 #if DISABLE_ASSETBUNDLE
         
 #else

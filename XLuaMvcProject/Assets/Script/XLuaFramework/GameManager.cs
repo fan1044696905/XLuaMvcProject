@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         }
         LuaManager.Instance.DoString("require'Main'");//执行lua Main脚本
         LuaHelper.Instance.LoadLuaView("UIRootCtrl");//创建窗体
+        //LuaHelper.Instance.AudioManager.PlayBgmAudio("tianxiawushuang");
     }
 }
 

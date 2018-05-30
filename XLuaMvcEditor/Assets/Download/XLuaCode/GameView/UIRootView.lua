@@ -17,16 +17,15 @@ end
 --初始化面板--
 function UIRootView.InitView()
 	this.btnOpenMessage = transform:Find("ContainerBottomRight/btnOpenMessage"):GetComponent("UnityEngine.UI.Button");
+	this.image = transform:Find("ContainerBottomRight/btnOpenMessage"):GetComponent("UnityEngine.UI.Image");
 	--this.btnJumpScene = transform:Find("ContainerBottomRight/btnJumpScene"):GetComponent("UnityEngine.UI.Button");
 	print("初始化面板完毕")
 end
 
 function UIRootView.start()
-	print('UIRootView start');
+	
 end
 
-function UIRootView.update()
-end
 
 function UIRootView.ondestroy()
 end

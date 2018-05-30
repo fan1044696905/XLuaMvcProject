@@ -1,5 +1,5 @@
 require "GameView/MessageView"
-require "Common/Define"
+--require "Common/Define"
 require "Data/DBModelMgr"
 
 MessageCtrl = {};

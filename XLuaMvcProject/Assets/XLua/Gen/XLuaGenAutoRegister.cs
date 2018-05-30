@@ -31,6 +31,8 @@ namespace XLua.CSObjectWrap
 				
 				translator.DelayWrapLoader(typeof(NetWorkSocket), NetWorkSocketWrap.__Register);
 				
+				translator.DelayWrapLoader(typeof(MonoBehaviourExtended), MonoBehaviourExtendedWrap.__Register);
+				
 				translator.DelayWrapLoader(typeof(LuaViewBehaviour), LuaViewBehaviourWrap.__Register);
 				
 				translator.DelayWrapLoader(typeof(LuaWindowBehaviour), LuaWindowBehaviourWrap.__Register);
@@ -144,6 +146,10 @@ namespace XLua.CSObjectWrap
 				translator.DelayWrapLoader(typeof(System.Collections.Generic.List<int>), SystemCollectionsGenericList_1_SystemInt32_Wrap.__Register);
 				
 				translator.DelayWrapLoader(typeof(UnityEngine.Debug), UnityEngineDebugWrap.__Register);
+				
+				translator.DelayWrapLoader(typeof(UnityEngine.UI.Image), UnityEngineUIImageWrap.__Register);
+				
+				translator.DelayWrapLoader(typeof(UnityEngine.UI.Button), UnityEngineUIButtonWrap.__Register);
 				
 				translator.DelayWrapLoader(typeof(Tutorial.BaseClass), TutorialBaseClassWrap.__Register);
 				

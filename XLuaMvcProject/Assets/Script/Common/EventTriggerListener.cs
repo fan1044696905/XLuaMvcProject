@@ -47,7 +47,7 @@ public class EventTriggerListener : UnityEngine.EventSystems.EventTrigger
         {
             if (onDoubleClick != null) onDoubleClick(gameObject);
         }
-        else if (eventData.clickCount == 2)
+        else if (eventData.clickCount == 3)
         {
             if (onThreeClick != null) onThreeClick(gameObject);
         }

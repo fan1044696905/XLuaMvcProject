@@ -77,6 +77,7 @@
 		<type fullname="GameDataTableToLua" preserve="all"/>
 		<type fullname="MMO_MemoryStream" preserve="all"/>
 		<type fullname="NetWorkSocket" preserve="all"/>
+		<type fullname="MonoBehaviourExtended" preserve="all"/>
 		<type fullname="LuaViewBehaviour" preserve="all"/>
 		<type fullname="LuaWindowBehaviour" preserve="all"/>
 		<type fullname="LuaHelper" preserve="all"/>
@@ -122,6 +123,12 @@
 		<type fullname="UnityEngine.WWW" preserve="all"/>
 		<type fullname="UnityEngine.Mathf" preserve="all"/>
 		<type fullname="UnityEngine.Debug" preserve="all"/>
+		
+	</assembly>
+
+	<assembly fullname="UnityEngine.UI">
+	    <type fullname="UnityEngine.UI.Image" preserve="all"/>
+		<type fullname="UnityEngine.UI.Button" preserve="all"/>
 		
 	</assembly>
 

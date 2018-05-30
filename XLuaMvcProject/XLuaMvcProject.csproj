@@ -98,9 +98,6 @@
     <Reference Include="Debuger">
       <HintPath>Assets/Plugins/Assembly/Debuger.dll</HintPath>
     </Reference>
-    <Reference Include="CustomSpace">
-      <HintPath>Assets/Script/Plugins/Debug/CustomSpace.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>F:/Develop SoftWare/Unity5.6.2/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
@@ -222,6 +219,7 @@
     <Compile Include="Assets\XLua\Gen\LuaViewBehaviourWrap.cs" />
     <Compile Include="Assets\XLua\Gen\LuaWindowBehaviourWrap.cs" />
     <Compile Include="Assets\XLua\Gen\MMO_MemoryStreamWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\MonoBehaviourExtendedWrap.cs" />
     <Compile Include="Assets\XLua\Gen\NetWorkSocketWrap.cs" />
     <Compile Include="Assets\XLua\Gen\PackUnpack.cs" />
     <Compile Include="Assets\XLua\Gen\SocketDispatcherWrap.cs" />
@@ -255,6 +253,8 @@
     <Compile Include="Assets\XLua\Gen\UnityEngineTextAssetWrap.cs" />
     <Compile Include="Assets\XLua\Gen\UnityEngineTimeWrap.cs" />
     <Compile Include="Assets\XLua\Gen\UnityEngineTransformWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineUIButtonWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\UnityEngineUIImageWrap.cs" />
     <Compile Include="Assets\XLua\Gen\UnityEngineVector2Wrap.cs" />
     <Compile Include="Assets\XLua\Gen\UnityEngineVector3Wrap.cs" />
     <Compile Include="Assets\XLua\Gen\UnityEngineVector4Wrap.cs" />

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1946730864
+CRC: 112501010
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -205,4 +205,16 @@ AssetBundleManifest:
       Dependencies: {}
     Info_64:
       Name: download/config/json/boss.assetbundle
+      Dependencies: {}
+    Info_65:
+      Name: download/uisource/atlas/item1.assetbundle
+      Dependencies: {}
+    Info_66:
+      Name: download/uisource/atlas/item2.assetbundle
+      Dependencies: {}
+    Info_67:
+      Name: download/uisource/atlas/item3.assetbundle
+      Dependencies: {}
+    Info_68:
+      Name: download/uisource/atlas/item4.assetbundle
       Dependencies: {}

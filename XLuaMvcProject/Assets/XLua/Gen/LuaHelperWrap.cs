@@ -21,7 +21,7 @@ namespace XLua.CSObjectWrap
         {
 			ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
 			System.Type type = typeof(LuaHelper);
-			Utils.BeginObjectRegister(type, L, translator, 0, 8, 4, 1);
+			Utils.BeginObjectRegister(type, L, translator, 0, 8, 8, 1);
 			
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "GetData", _m_GetData);
 			Utils.RegisterFunc(L, Utils.METHOD_IDX, "CreateMemoryStream", _m_CreateMemoryStream);
@@ -36,6 +36,10 @@ namespace XLua.CSObjectWrap
 			Utils.RegisterFunc(L, Utils.GETTER_IDX, "UISceneCtrl", _g_get_UISceneCtrl);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "UIWindowsUtil", _g_get_UIWindowsUtil);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "AssetBundleMgr", _g_get_AssetBundleMgr);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "AtlasManager", _g_get_AtlasManager);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "AudioManager", _g_get_AudioManager);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "ConfigManager", _g_get_ConfigManager);
+            Utils.RegisterFunc(L, Utils.GETTER_IDX, "FrameTimerManager", _g_get_FrameTimerManager);
             Utils.RegisterFunc(L, Utils.GETTER_IDX, "luaList", _g_get_luaList);
             
 			Utils.RegisterFunc(L, Utils.SETTER_IDX, "luaList", _s_set_luaList);
@@ -367,6 +371,62 @@ namespace XLua.CSObjectWrap
 			
                 LuaHelper gen_to_be_invoked = (LuaHelper)translator.FastGetCSObj(L, 1);
                 translator.Push(L, gen_to_be_invoked.AssetBundleMgr);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_AtlasManager(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                LuaHelper gen_to_be_invoked = (LuaHelper)translator.FastGetCSObj(L, 1);
+                translator.Push(L, gen_to_be_invoked.AtlasManager);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_AudioManager(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                LuaHelper gen_to_be_invoked = (LuaHelper)translator.FastGetCSObj(L, 1);
+                translator.Push(L, gen_to_be_invoked.AudioManager);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_ConfigManager(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                LuaHelper gen_to_be_invoked = (LuaHelper)translator.FastGetCSObj(L, 1);
+                translator.Push(L, gen_to_be_invoked.ConfigManager);
+            } catch(System.Exception gen_e) {
+                return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
+            }
+            return 1;
+        }
+        
+        [MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+        static int _g_get_FrameTimerManager(RealStatePtr L)
+        {
+		    try {
+                ObjectTranslator translator = ObjectTranslatorPool.Instance.Find(L);
+			
+                LuaHelper gen_to_be_invoked = (LuaHelper)translator.FastGetCSObj(L, 1);
+                translator.Push(L, gen_to_be_invoked.FrameTimerManager);
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);
             }

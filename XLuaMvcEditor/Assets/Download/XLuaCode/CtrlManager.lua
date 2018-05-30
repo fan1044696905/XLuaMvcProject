@@ -2,7 +2,7 @@
 
 print('启动CtrlManager.lua')
 
-require "Common/Define"
+--require "Common/Define"
 require "GameCtrl/UIRootCtrl"
 require "GameCtrl/MessageCtrl"
 

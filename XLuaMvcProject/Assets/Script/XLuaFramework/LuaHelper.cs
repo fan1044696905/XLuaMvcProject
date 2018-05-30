@@ -34,7 +34,23 @@ public class LuaHelper : Singleton<LuaHelper>
         get { return AssetBundleMgr.Instance; }
     }
 
+    public AtlasManager AtlasManager
+    {
+        get { return AtlasManager.Instance; }
+    }
 
+    public AudioManager AudioManager
+    {
+        get { return AudioManager.Instance; }
+    }
+    public ConfigManager ConfigManager
+    {
+        get { return ConfigManager.Instance; }
+    }
+    public FrameTimerManager FrameTimerManager
+    {
+        get { return FrameTimerManager.Instance; }
+    }
     /// <summary>
     /// 读取数据
     /// </summary>
@@ -180,6 +196,7 @@ public class LuaHelper : Singleton<LuaHelper>
     }
 
     #endregion
+
 
     public List<string> luaList = new List<string>();
     /// <summary>

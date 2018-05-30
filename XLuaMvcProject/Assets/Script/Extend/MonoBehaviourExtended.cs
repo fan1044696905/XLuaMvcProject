@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using XLua;
+[LuaCallCSharp]
 public static class MonoBehaviourExtended
 {
     #region Get Or Add Component By Path
@@ -12,6 +14,21 @@ public static class MonoBehaviourExtended
     /// <param name="path">路径(为空表示操作自身，否则表示操作子对象)</param>
     /// <returns></returns>
     public static T GetOrAddComponent<T>(this GameObject go, string path = "") where T : Component
+    {
+        return GetOrAddComponent(go, typeof(T), path) as T;
+    }
+
+    public static T GetOrAddComponent<T>(this Transform trans, string path = "") where T : Component
+    {
+        return trans.gameObject.GetOrAddComponent<T>(path);
+    }
+
+    public static T GetOrAddComponent<T>(this MonoBehaviour mono, string path = "") where T : Component
+    {
+        return mono.gameObject.GetOrAddComponent<T>(path);
+    }
+
+    public static Component GetOrAddComponent(this GameObject go,System.Type type,string path="")
     {
         Transform t;
         if (string.IsNullOrEmpty(path))
@@ -27,22 +44,54 @@ public static class MonoBehaviourExtended
             Debuger.LogError(go.name + " not Find GameObject at Path: " + path);
             return null;
         }
-        T ret = t.gameObject.GetComponent<T>();
+        Component ret = t.gameObject.GetComponent(type);
         if (ret == null)
         {
-            ret = t.gameObject.AddComponent<T>();
+            ret = t.gameObject.AddComponent(type);
+        }
+        return ret;
+    }
+    public static Component GetOrAddComponent(this Transform trans, System.Type type, string path = "")
+    {
+        return trans.gameObject.GetOrAddComponent(type, path);
+    }
+    public static Component GetOrAddComponent(this MonoBehaviour mono, System.Type type, string path = "")
+    {
+        return mono.gameObject.GetOrAddComponent(type, path);
+    }
+
+    public static Component GetOrAddComponent(this GameObject go, string typeStr, string path = "")
+    {
+        Transform t;
+        if (string.IsNullOrEmpty(path))
+        {
+            t = go.transform;
+        }
+        else
+        {
+            t = go.transform.Find(path);
+        }
+        if (t == null)
+        {
+            Debuger.LogError(go.name + " not Find GameObject at Path: " + path);
+            return null;
+        }
+        System.Type type = System.Type.GetType(typeStr);
+        Component ret = t.gameObject.GetComponent(type);
+        if (ret == null)
+        {
+            ret = t.gameObject.AddComponent(type);
         }
         return ret;
     }
 
-    public static T GetOrAddComponent<T>(this Transform trans, string path = "") where T : Component
+    public static Component GetOrAddComponent(this Transform trans, string typeStr, string path = "")
     {
-        return trans.gameObject.GetOrAddComponent<T>(path);
+        return trans.gameObject.GetOrAddComponent(typeStr, path);
     }
-
-    public static T GetOrAddComponent<T>(this MonoBehaviour mono, string path = "") where T : Component
+    public static Component GetOrAddComponent(this MonoBehaviour mono, string typeStr, string path = "")
     {
-        return mono.gameObject.GetOrAddComponent<T>(path);
+        return mono.gameObject.GetOrAddComponent(typeStr, path);
     }
     #endregion
 
@@ -100,7 +149,7 @@ public static class MonoBehaviourExtended
     /// <param name="image"></param>
     /// <param name="atlasName">图集名字</param>
     /// <param name="spriteName">小图片名</param>
-    public static void SetAtlasSprite(this Image image,string atlasName,string spriteName)
+    public static void SetAtlasSprite(this Image image, string atlasName, string spriteName)
     {
         Sprite sp = AtlasManager.Instance.GetAtlasSprite(atlasName, spriteName);
         image.sprite = sp;

@@ -1,4 +1,4 @@
-require "Common/Define"
+--require "Common/Define"
 require "Data/Create/MessageDBModel"
 require "Data/MessageDBModelExt"
 

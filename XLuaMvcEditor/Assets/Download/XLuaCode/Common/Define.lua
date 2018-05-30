@@ -24,3 +24,6 @@ GameObject = CS.UnityEngine.GameObject;
 Color = CS.UnityEngine.Color;
 Vector3 = CS.UnityEngine.Vector3;
 LuaManager = CS.LuaManager.Instance;
+AudioManager = CS.LuaHelper.Instance.AudioManager;
+AtlasManager = CS.LuaHelper.Instance.AtlasManager;
+FrameTimerManager = CS.LuaHelper.Instance.FrameTimerManager;
