@@ -1051,6 +1051,29 @@ namespace XLua.CSObjectWrap
                     
                     return 1;
                 }
+                if(gen_param_count == 3&& (LuaAPI.lua_isnil(L, 2) || LuaAPI.lua_type(L, 2) == LuaTypes.LUA_TSTRING)&& (LuaAPI.lua_isnil(L, 3) || LuaAPI.lua_type(L, 3) == LuaTypes.LUA_TSTRING)) 
+                {
+                    string _typeStr = LuaAPI.lua_tostring(L, 2);
+                    string _path = LuaAPI.lua_tostring(L, 3);
+                    
+                        UnityEngine.Component gen_ret = gen_to_be_invoked.GetOrAddComponent( _typeStr, _path );
+                        translator.Push(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
+                if(gen_param_count == 2&& (LuaAPI.lua_isnil(L, 2) || LuaAPI.lua_type(L, 2) == LuaTypes.LUA_TSTRING)) 
+                {
+                    string _typeStr = LuaAPI.lua_tostring(L, 2);
+                    
+                        UnityEngine.Component gen_ret = gen_to_be_invoked.GetOrAddComponent( _typeStr );
+                        translator.Push(L, gen_ret);
+                    
+                    
+                    
+                    return 1;
+                }
                 
             } catch(System.Exception gen_e) {
                 return LuaAPI.luaL_error(L, "c# exception:" + gen_e);

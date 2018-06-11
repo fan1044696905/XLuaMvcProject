@@ -6,7 +6,7 @@ using System.IO;
 /// <summary>
 /// xLua环境管理类
 /// </summary>
-public class LuaManager : SingletonMono<LuaManager>
+public class XLuaManager : SingletonMono<XLuaManager>
 {
     /// <summary>
     /// 全局的xLua引擎

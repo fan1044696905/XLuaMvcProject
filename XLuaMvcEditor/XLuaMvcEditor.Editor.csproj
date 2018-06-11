@@ -184,6 +184,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="XLuaMvcEditor.csproj">
+      <Project>{160FB200-4C5C-2D05-82FC-2CDBCB1C086E}</Project>
+      <Name>XLuaMvcEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <Compile Include="Assets\Editor\AssetBundle\AssetBundleDAL.cs" />
     <Compile Include="Assets\Editor\AssetBundle\AssetBundleEntity.cs" />

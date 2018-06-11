@@ -31,7 +31,7 @@ public class LuaWindowBehaviour : UIWindowViewBase
     protected override void OnAwake()
     {
         base.OnAwake();
-        luaEnv = LuaManager.LuaEnv; //此处要从LuaManager上获取 全局只有一个
+        luaEnv = XLuaManager.LuaEnv; //此处要从LuaManager上获取 全局只有一个
 
         scriptEnv = luaEnv.NewTable();
 

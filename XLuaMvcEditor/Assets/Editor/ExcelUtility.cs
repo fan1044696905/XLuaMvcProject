@@ -179,7 +179,7 @@ public class ExcelUtility
                 //添加到表数据中
                 table.Add(row);
             }
-            stringBuilder.Append(string.Format("\t\"{0}\" = ", mSheet.TableName));
+            stringBuilder.Append(string.Format("\t{0} = ", mSheet.TableName));
             stringBuilder.Append("{\r\n");
             foreach (Dictionary<string, object> dic in table)
             {
@@ -187,9 +187,9 @@ public class ExcelUtility
                 foreach (string key in dic.Keys)
                 {
                     if (dic[key].GetType().Name == "String")
-                        stringBuilder.Append(string.Format("\t\t\t\"{0}\" = \"{1}\",\r\n", key, dic[key]));
+                        stringBuilder.Append(string.Format("\t\t\t{0} = \"{1}\",\r\n", key, dic[key]));
                     else
-                        stringBuilder.Append(string.Format("\t\t\t\"{0}\" = {1},\r\n", key, dic[key]));
+                        stringBuilder.Append(string.Format("\t\t\t{0} = {1},\r\n", key, dic[key]));
                 }
                 stringBuilder.Append("\t\t},\r\n");
             }

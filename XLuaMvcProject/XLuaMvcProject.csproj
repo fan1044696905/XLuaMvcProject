@@ -124,6 +124,7 @@
     <Compile Include="Assets\Script\Common\GlobalInit.cs" />
     <Compile Include="Assets\Script\Common\JsonManager.cs" />
     <Compile Include="Assets\Script\Common\LocalFileMgr.cs" />
+    <Compile Include="Assets\Script\Common\LuaManager.cs" />
     <Compile Include="Assets\Script\Common\Pool\ObjectPool.cs" />
     <Compile Include="Assets\Script\Common\Pool\PoolItem.cs" />
     <Compile Include="Assets\Script\Common\Pool\PoolManager.cs" />
@@ -181,10 +182,10 @@
     <Compile Include="Assets\Script\Utils\OperateAlert\OperateUtil.cs" />
     <Compile Include="Assets\Script\Utils\SecurityUtil.cs" />
     <Compile Include="Assets\Script\Utils\StringUtil.cs" />
-    <Compile Include="Assets\Script\XLuaFramework\Core\LuaManager.cs" />
     <Compile Include="Assets\Script\XLuaFramework\Core\LuaViewBehaviour.cs" />
     <Compile Include="Assets\Script\XLuaFramework\Core\LuaWindowBehaviour.cs" />
     <Compile Include="Assets\Script\XLuaFramework\Core\XLuaCustomExport.cs" />
+    <Compile Include="Assets\Script\XLuaFramework\Core\XLuaManager.cs" />
     <Compile Include="Assets\Script\XLuaFramework\GameManager.cs" />
     <Compile Include="Assets\Script\XLuaFramework\LuaHelper.cs" />
     <Compile Include="Assets\Script\XLuaFramework\UI\ISystemCtrl.cs" />

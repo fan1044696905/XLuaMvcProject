@@ -155,7 +155,7 @@ public class LuaHelper : Singleton<LuaHelper>
     /// <param name="ctrName">控制器名称</param>
     public void LoadLuaView(string ctrName)
     {
-        luaEnv = LuaManager.LuaEnv;
+        luaEnv = XLuaManager.LuaEnv;
         if (luaEnv == null) return;
 
         scriptEnv = luaEnv.NewTable();

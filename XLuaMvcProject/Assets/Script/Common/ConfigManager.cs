@@ -121,4 +121,15 @@ public class ConfigManager : Singleton<ConfigManager> {
 
     #endregion
 
+    #region ------ 读取服务器Lua配置 ------
+
+
+
+    #endregion
+
+    #region ------ 读取本地Lua配置 ------
+
+
+
+    #endregion
 }

@@ -28,7 +28,7 @@ public class LuaViewBehaviour : MonoBehaviour
 
     void Awake()
     {
-        luaEnv = LuaManager.LuaEnv; //此处要从LuaManager上获取 全局只有一个
+        luaEnv = XLuaManager.LuaEnv; //此处要从LuaManager上获取 全局只有一个
 
         scriptEnv = luaEnv.NewTable();
 

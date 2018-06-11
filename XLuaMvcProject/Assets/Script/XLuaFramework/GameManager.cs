@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        //启动的时候 在自身挂上 LuaManager 脚本
-        gameObject.AddComponent<LuaManager>();
+        //启动的时候 在自身挂上 XLuaManager 脚本
+        gameObject.AddComponent<XLuaManager>();
         DontDestroyOnLoad(gameObject);
     }
 
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         {
             DelegateDefine.Instance.OnSceneLoadOK();
         }
-        LuaManager.Instance.DoString("require'Main'");//执行lua Main脚本
+        XLuaManager.Instance.DoString("require'Main'");//执行lua Main脚本
         LuaHelper.Instance.LoadLuaView("UIRootCtrl");//创建窗体
         //LuaHelper.Instance.AudioManager.PlayBgmAudio("tianxiawushuang");
     }
