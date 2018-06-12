@@ -111,6 +111,7 @@
   <ItemGroup>
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
     <Compile Include="Assets\SceneTest\CommonTest\Test.cs" />
+    <Compile Include="Assets\SceneTest\ConfigTest\ConfigTest.cs" />
     <Compile Include="Assets\SceneTest\DragList\DragListTest.cs" />
     <Compile Include="Assets\SceneTest\LanguageTest\LanguageTest.cs" />
     <Compile Include="Assets\Script\AppConst.cs" />
@@ -213,6 +214,7 @@
     <Compile Include="Assets\XLua\Gen\DGTweeningTweenSettingsExtensionsWrap.cs" />
     <Compile Include="Assets\XLua\Gen\DGTweeningTweenWrap.cs" />
     <Compile Include="Assets\XLua\Gen\DGTweeningTweenerWrap.cs" />
+    <Compile Include="Assets\XLua\Gen\DebugerWrap.cs" />
     <Compile Include="Assets\XLua\Gen\DelegatesGensBridge.cs" />
     <Compile Include="Assets\XLua\Gen\EnumWrap.cs" />
     <Compile Include="Assets\XLua\Gen\GameDataTableToLuaWrap.cs" />

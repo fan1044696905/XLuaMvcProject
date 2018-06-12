@@ -147,56 +147,57 @@ public class ExcelUtility
             return;
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.Append("local datas = {");
-        stringBuilder.Append("\r\n");
-
         //读取数据表
         foreach (DataTable mSheet in mResultSet.Tables)
         {
             //判断数据表内是否存在数据
-            if (mSheet.Rows.Count < 1)
+            if (mSheet.Rows.Count<1)
+            {
                 continue;
-
-            //读取数据表行数和列数
+            }
+            //读取数据表行数、列数
             int rowCount = mSheet.Rows.Count;
             int colCount = mSheet.Columns.Count;
+            stringBuilder.Append("local datas = {\n\t");
 
-            //准备一个列表存储整个表的数据
-            List<Dictionary<string, object>> table = new List<Dictionary<string, object>>();
-
-            //读取数据
-            for (int i = 1; i < rowCount; i++)
+            //行
+            for (int i = 3; i < rowCount; i++)
             {
-                //准备一个字典存储每一行的数据
-                Dictionary<string, object> row = new Dictionary<string, object>();
-                for (int j = 0; j < colCount; j++)
+                //列
+                for (int k = 0; k < colCount; k++)
                 {
-                    //读取第1行数据作为表头字段
-                    string field = mSheet.Rows[0][j].ToString();
-                    //Key-Value对应
-                    row[field] = mSheet.Rows[i][j];
-                }
-                //添加到表数据中
-                table.Add(row);
-            }
-            stringBuilder.Append(string.Format("\t{0} = ", mSheet.TableName));
-            stringBuilder.Append("{\r\n");
-            foreach (Dictionary<string, object> dic in table)
-            {
-                stringBuilder.Append("\t\t{\r\n");
-                foreach (string key in dic.Keys)
-                {
-                    if (dic[key].GetType().Name == "String")
-                        stringBuilder.Append(string.Format("\t\t\t{0} = \"{1}\",\r\n", key, dic[key]));
+                    string field = mSheet.Rows[2][k].ToString();
+                    //如果ID为空 跳过该行 mSheet.Rows[i][0].ToString()
+                    if (string.IsNullOrEmpty(mSheet.Rows[i][k].ToString()))
+                    {
+                        break;
+                    }
+                    object value = mSheet.Rows[i][k];
+                    string valueType = mSheet.Rows[1][k].ToString();
+                    string valueStr = GetValueType(valueType, value);
+                    if (k == 0)
+                    {
+                        stringBuilder.Append("[" + valueStr + "] = {");
+                    }
+                    else if (k < colCount - 1)
+                    {
+                        stringBuilder.Append(" " + field + " = " + valueStr + ",");
+                        continue;
+                    }
                     else
-                        stringBuilder.Append(string.Format("\t\t\t{0} = {1},\r\n", key, dic[key]));
+                    {
+                        if (i == rowCount -1)
+                        {
+                            stringBuilder.Append(" " + field + " = " + valueStr + "},\n");
+                            continue;
+                        }
+                        stringBuilder.Append(" " + field + " = " + valueStr + "},\n\t");
+                    }
                 }
-                stringBuilder.Append("\t\t},\r\n");
             }
-            stringBuilder.Append("\t}\r\n");
-        }
 
-        stringBuilder.Append("}\r\n");
+        }
+        stringBuilder.Append("}\n");
         stringBuilder.Append("return datas");
 
         //写入文件
@@ -209,6 +210,52 @@ public class ExcelUtility
         }
     }
 
+    public string GetValueType(string type, object value)
+    {
+        string valueStr = "";
+        switch (type)
+        {
+            case "string":
+                valueStr = "\"" + value.ToString() + "\"";
+                break;
+            case "int":
+                valueStr = value.ToString();
+                break;
+            case "array":
+                string[] strs = value.ToString().Split('[')[1].Split(']')[0].Split(',');
+                try
+                {
+                    double.Parse(strs[0]);//不抛异常说明数组里第一个值为数字类型
+                    valueStr += "{";
+                    for (int i = 0; i < strs.Length; i++)
+                    {
+                        if (i == 0)
+                        {
+                            valueStr += strs[i];
+                            continue;
+                        }
+                        valueStr += ", " + strs[i];
+                    }
+                    valueStr += "}";
+                }
+                catch (Exception)
+                {
+                    valueStr += "{";
+                    for (int i = 0; i < strs.Length; i++)
+                    {
+                        if (i == 0)
+                        {
+                            valueStr += "\"" +strs[i] + "\"";
+                            continue;
+                        }
+                        valueStr += ", \"" + strs[i] + "\"";
+                    }
+                    valueStr += "}";
+                }
+                break;
+        }
+        return valueStr;
+    }
 
     /// <summary>
     /// 转换为CSV

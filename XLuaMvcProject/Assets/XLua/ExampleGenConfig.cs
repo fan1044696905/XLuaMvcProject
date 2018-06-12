@@ -49,6 +49,7 @@ public static class ExampleGenConfig
                 typeof(UnityEngine.Debug),
                 typeof(MonoBehaviourExtended),
                 typeof(UnityEngine.UI.Image),
+                typeof(Debuger),
                 typeof(UnityEngine.UI.Button)
             };
 

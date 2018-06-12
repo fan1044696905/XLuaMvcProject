@@ -132,4 +132,9 @@
 		
 	</assembly>
 
+	<assembly fullname="Debuger">
+	    <type fullname="Debuger" preserve="all"/>
+		
+	</assembly>
+
 </linker>
