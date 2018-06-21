@@ -197,6 +197,10 @@
     <Compile Include="Assets\Script\XLuaFramework\UI\UISceneCtrl.cs" />
     <Compile Include="Assets\Script\XLuaFramework\UI\UIWindowsMgr.cs" />
     <Compile Include="Assets\Script\XLuaFramework\UI\UIWindowsUtil.cs" />
+    <Compile Include="Assets\UGUI\GridLayoutGroup1.cs" />
+    <Compile Include="Assets\UGUI\LayoutGroup1.cs" />
+    <Compile Include="Assets\UGUI\ListPool.cs" />
+    <Compile Include="Assets\UGUI\ObjectPool.cs" />
     <Compile Include="Assets\XLua\ExampleGenConfig.cs" />
     <Compile Include="Assets\XLua\Gen\CSCallLuaItfDBridge.cs" />
     <Compile Include="Assets\XLua\Gen\DGTweeningCoreABSSequentiableWrap.cs" />

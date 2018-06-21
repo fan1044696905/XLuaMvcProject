@@ -16,7 +16,7 @@ public static class GameObjectUtil
     /// <param name="Parent">父对象</param>
     public static void SetParent(this GameObject obj, Transform Parent)
     {
-        obj.transform.parent = Parent;
+        obj.transform.SetParent(Parent);
         obj.transform.localPosition = Vector3.zero;
         obj.transform.localScale = Vector3.one;
         obj.transform.localEulerAngles = Vector3.zero;

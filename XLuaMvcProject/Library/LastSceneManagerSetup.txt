@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SceneTest/ConfigTest/ConfigTest.unity
+- path: Assets/SceneTest/DragList/DragList.unity
   isLoaded: 1
   isActive: 1
